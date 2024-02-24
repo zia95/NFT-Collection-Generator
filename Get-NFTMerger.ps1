@@ -1,4 +1,3 @@
-#Requires -Version 6.0
 <#
 .SYNOPSIS
     Calculate all nft rarity from the metadata
@@ -40,6 +39,7 @@
     Wings_4          97         19.40       500
     Mouth_32          4          0.80       500
 #>
+#Requires -Version 6.0
 [CmdletBinding()]
 param(
     #Config file where all the layer data is stored.

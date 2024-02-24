@@ -1,4 +1,3 @@
-#Requires -Version 6.0
 <#
 .SYNOPSIS
     Calculate rarity of all nft files using a cache
@@ -13,6 +12,7 @@
     ...........
     ...........
 #>
+#Requires -Version 6.0
 param(
     #Specify the directoy where all the metadata is stored.
     [Parameter(Mandatory=$true)]
