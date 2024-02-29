@@ -10,7 +10,14 @@ function Get-LayersDict
     foreach($layer in $Config.layers)
     {
         Write-Information "--> $($layer.name) layer found";
-        $layers_dict[$layer.name] = $layer.traits | ForEach-Object { $_.weight } #$traits_weights.ToArray();
+        
+        $layers_dict[$layer.name] = $layer.traits | ForEach-Object {
+            $layer_dict_item = [PSCustomObject]@{
+                Weight = $_.weight;
+                SourcesCount = $_.sources.Length;
+            }
+            $layer_dict_item
+        } #$traits_weights.ToArray();
     }
     return $layers_dict;
 }

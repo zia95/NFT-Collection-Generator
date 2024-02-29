@@ -1,7 +1,7 @@
 function Confirm-Sequence
 {
     param(
-        [int[]]$GeneratedSequence,
+        [PSCustomObject[]]$GeneratedSequence,
         [PSCustomObject]$LayersConfig
         )
 

@@ -1,43 +1,20 @@
 <#
 .SYNOPSIS
-    Calculate all nft rarity from the metadata
+    Generate nft sequences file which then can be used by the nftmerger to generate nfts and the metadata.
 .DESCRIPTION
-    Calculate all nft rarity from the metadata
+    Generate nft sequences file which then can be used by the nftmerger to generate nfts and the metadata.
 .EXAMPLE
-    To get rarity of each trait in the collection:
-    .\Get-Rarity.ps1 -MetadataDirectory '.\output\sample4\erc721 metadata\'
-    Processing...
-    Rarity processed for total 500 nfts
-    
-    TraitName   Appeared RarityPercent TotalNfts
-    ---------   -------- ------------- ---------
-    SkinBase_14        6          1.20       500
-    Mouth_38           6          1.20       500
-    Eyes_0            15          3.00       500
-    Extra_3           12          2.40       500
-    Mouth_6           22          4.40       500
-    Mouth_25           7          1.40       500
-    Skin_2            11          2.20       500
-    Mouth_29           7          1.40       500
-    Mouth_2           18          3.60       500
-    Wings_0          103         20.60       500
-    SkinBase_57       14          2.80       500
-    ...........
-    ...........
-.EXAMPLE
-    To get rarity of a single nft in the collection:
-    .\Get-Rarity.ps1 -MetadataDirectory '.\output\sample4\erc721 metadata\' -SingleNftID 1
-    Processing...
-    Rarity processed for total 500 nfts
-    
-    TraitName  Appeared RarityPercent TotalNfts
-    ---------  -------- ------------- ---------
-    Skin_63           7          1.40       500
-    Eyes_1           25          5.00       500
-    SkinBase_3       10          2.00       500
-    Extra_15         27          5.40       500
-    Wings_4          97         19.40       500
-    Mouth_32          4          0.80       500
+    To get a sequence:
+    .\Get-NFTSequence.ps1 -ConfigFile '.\testconfig.json' -Count 10000 -PauseWhenSequenceFail 10 -OutputSequenceFile testseqfile.json -PluginModuleFilePath .\plugin.test.psm1
+    Loading plugin module...
+    Trying to generate 10000 sequences
+    WARNING: Generated sequence was not unique, discarding sequence:
+    WARNING: Generated sequence was not unique, discarding sequence:
+    WARNING: Generated sequence was not unique, discarding sequence:
+
+    ConfigFile        Sequences
+    ----------        ---------
+    .\testconfig.json {     ,      ,       ,      …}
 #>
 #Requires -Version 6.0
 param(
@@ -53,7 +30,7 @@ param(
     [ValidateScript({-not (Test-Path $_)}, ErrorMessage="Output file already exists.")]
     [string]$OutputSequenceFile,
     #When the specified number of sequences fail in a row, ask whether to keep generating (until successful or again hit fail...) or quit
-    [int]$AskForContinuationWhenSpecifiedSequenceFail = 0,
+    [int]$PauseWhenSequenceFail = 0,
     #To control over the sequences which are generated
     [ValidateScript({Test-Path $_}, ErrorMessage="The specified plugin module does not exist.")]
     [string]$PluginModuleFilePath
@@ -80,49 +57,51 @@ if($plugin_module_present)
 $ConfigFile = Resolve-Path $ConfigFile
 
 
-function Get-WeightedRandom
+function Get-WeightedRandomTrait
 {
-    param(
-        [string[]]$Traits,
-        [double[]]$Weights
-    )
-
-    # Validate input arrays
-    if ($Traits.Length -ne $Weights.Length) {
-        throw "Traits and Weights arrays must have the same length."
-    }
+    param([PSCustomObject[]]$Traits)
 
     # Calculate total weight
-    $totalWeight = $Weights | Measure-Object -Sum | Select-Object -ExpandProperty Sum
+    $total_weight = $Traits | ForEach-Object { $_.weight } | Measure-Object -Sum | Select-Object -ExpandProperty Sum
 
     # Generate a random value between 0 and totalWeight
-    $randomValue = Get-Random -Minimum 0 -Maximum $totalWeight
+    $random_value = Get-Random -Minimum 0 -Maximum $total_weight
 
     # Find the selected trait based on weights
-    $cumulativeWeight = 0
-    for ($i = 0; $i -lt $Traits.Length; $i++) {
-        $cumulativeWeight += $Weights[$i]
-        if ($randomValue -le $cumulativeWeight) {
-            return $Traits[$i]
+    $cumulative_weight = 0
+    for ($i = 0; $i -lt $Traits.Length; $i++)
+    {
+        $cumulative_weight += $Traits[$i].weight;
+        if ($random_value -le $cumulative_weight)
+        {
+            return $i
         }
     }
 }
 
 function Get-NewSequence
 {
-	param([System.Collections.Generic.Dictionary[string, int[]]]$LayersDict)
+	param([PSCustomObject]$Config)
 
-    return $layers_dict.Keys | ForEach-Object {
-        $traits_weights = $layers_dict[$_]
-        $traits = 0..($traits_weights.Count-1)
-        $random_trait = Get-WeightedRandom -Traits $traits -Weights $traits_weights
-        #Write-Host "Random for the layer: $random_trait"
-        $random_trait
+    (0..($Config.layers.Length - 1)) | ForEach-Object {
+        $traits = $Config.layers[$_].traits
+
+        $random_trait_index = Get-WeightedRandomTrait -Traits $traits
+        $source_count = $traits[$random_trait_index].sources.Length;
+
+        for([int] $i = 0; $i -lt $source_count; $i++)
+        {
+            [PSCustomObject]@{
+                LayerIndex = $_;
+                TraitIndex = $random_trait_index;
+                TraitSourceIndex = $i;
+            }
+        }
     }
 }
 function Test-IsSequenceUnique
 {
-    param([int[][]]$Sequences, [int[]] $SequenceToTest)
+    param([PSCustomObject[][]]$Sequences, [PSCustomObject[]] $SequenceToTest)
 
     if($null -eq $SequenceToTest)
     {
@@ -136,7 +115,11 @@ function Test-IsSequenceUnique
         [int]$seq_len = $seq.Length;
         for($i = 0; $i -lt $seq_len; $i++)
         {
-            if($seq[$i] -eq $SequenceToTest[$i])
+            [bool]$is_trait_equal = $seq[$i].LayerIndex -eq $SequenceToTest[$i].LayerIndex -and `
+                                    $seq[$i].TraitIndex -eq $SequenceToTest[$i].TraitIndex -and `
+                                    $seq[$i].TraitSourceIndex -eq $SequenceToTest[$i].TraitSourceIndex;
+
+            if($is_trait_equal)
             {
                 #check if its the last elm, if so then all the elms are same and the sequence is not unique
                 if($i -eq ($seq_len - 1))
@@ -159,8 +142,8 @@ function Test-IsSequenceUnique
 }
 
 $config = ConvertFrom-Json (Get-Content $ConfigFile -Raw)
-[System.Collections.Generic.Dictionary[string, int[]]]$layers_dict = Get-LayersDict -Config $config;
-[System.Collections.Generic.List[int[]]]$sequences = [System.Collections.Generic.List[int[]]]::new();
+#[System.Collections.Generic.Dictionary[string, PSCustomObject[]]]$layers_dict = Get-LayersDict -Config $config;
+[System.Collections.Generic.List[PSCustomObject[]]]$sequences = [System.Collections.Generic.List[PSCustomObject[]]]::new();
 
 Write-Host "Trying to generate $($Count) sequences"
 
@@ -168,7 +151,7 @@ Write-Host "Trying to generate $($Count) sequences"
 
 while ($sequences.Count -ne $Count)
 {
-    $seq = Get-NewSequence -LayersDict $layers_dict;
+    $seq = Get-NewSequence -Config $config;
     if($plugin_module_present)
     {
         $seq = Confirm-Sequence -GeneratedSequence $seq -LayersConfig $config;
@@ -187,9 +170,9 @@ while ($sequences.Count -ne $Count)
         Write-Warning "Generated sequence was not unique, discarding sequence: $seq";
     }
 
-    if($AskForContinuationWhenSpecifiedSequenceFail -gt 0)
+    if($PauseWhenSequenceFail -gt 0)
     {
-        if($total_failed_in_row -ge $AskForContinuationWhenSpecifiedSequenceFail)
+        if($total_failed_in_row -ge $PauseWhenSequenceFail)
         {
             $cont = Read-Host "Failed $total_failed_in_row times in a row. Do you want to continue? Enter 'y' to continue"
             if([string]::IsNullOrEmpty($cont))
@@ -208,7 +191,7 @@ if($sequences.Count -gt 0)
         ConfigFile = $ConfigFile
         Sequences =  $sequences
     }
-    $seq_json | ConvertTo-Json -Compress >> $OutputSequenceFile
+    $seq_json | ConvertTo-Json -Compress -Depth 4 >> $OutputSequenceFile
 
     return $seq_json
 }
