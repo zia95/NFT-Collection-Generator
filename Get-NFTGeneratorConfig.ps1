@@ -38,6 +38,7 @@ function Get-TraitsConfigFromDirectory
     }
     $dirlayerconfig.traits = Get-ChildItem $LayerDirectory | ForEach-Object {
         [PSCustomObject]@{
+            name = [System.IO.Path]::GetFileNameWithoutExtension($_)
             weight = 1
             sources = @(Resolve-Path -Relative $_)
         }

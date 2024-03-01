@@ -1,0 +1,543 @@
+{
+  "name": "newly generated",
+  "layers": [
+    {
+      "name": "Background",
+      "traits": [
+        {
+          "name": "Gradient Circular",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Background__z10\\Gradient Circular.png"
+          ]
+        },
+        {
+          "name": "Gradient Wave",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Background__z10\\Gradient Wave.png"
+          ]
+        },
+        {
+          "name": "Gradient",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Background__z10\\Gradient.png"
+          ]
+        },
+        {
+          "name": "Orange Gradient",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Background__z10\\Orange Gradient.png"
+          ]
+        },
+        {
+          "name": "Orange Green Gradient",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Background__z10\\Orange Green Gradient.png"
+          ]
+        },
+        {
+          "name": "Pink",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Background__z10\\Pink.png"
+          ]
+        },
+        {
+          "name": "Solid Green",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Background__z10\\Solid Green.png"
+          ]
+        },
+        {
+          "name": "Solid Orange",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Background__z10\\Solid Orange.png"
+          ]
+        },
+        {
+          "name": "Yellow Waves",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Background__z10\\Yellow Waves.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SkinBase",
+      "traits": [
+        {
+          "name": "Black Pattern",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\SkinBase__z30\\Black Pattern.png"
+          ]
+        },
+        {
+          "name": "Blue Circular Fan",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\SkinBase__z30\\Blue Circular Fan.png"
+          ]
+        },
+        {
+          "name": "Bones",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\SkinBase__z30\\Bones.png"
+          ]
+        },
+        {
+          "name": "Cats",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\SkinBase__z30\\Cats.png"
+          ]
+        },
+        {
+          "name": "Hearts",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\SkinBase__z30\\Hearts.png"
+          ]
+        },
+        {
+          "name": "Leaves",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\SkinBase__z30\\Leaves.png"
+          ]
+        },
+        {
+          "name": "Mayan",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\SkinBase__z30\\Mayan.png"
+          ]
+        },
+        {
+          "name": "New Year",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\SkinBase__z30\\New Year.png"
+          ]
+        },
+        {
+          "name": "Night Cats",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\SkinBase__z30\\Night Cats.png"
+          ]
+        },
+        {
+          "name": "Red Pattern",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\SkinBase__z30\\Red Pattern.png"
+          ]
+        },
+        {
+          "name": "Voodoo",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\SkinBase__z30\\Voodoo.png"
+          ]
+        },
+        {
+          "name": "Waves",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\SkinBase__z30\\Waves.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Skin",
+      "traits": [
+        {
+          "name": "Black Skull",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Skin__z40\\Black Skull.png"
+          ]
+        },
+        {
+          "name": "Blue Skull",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Skin__z40\\Blue Skull.png"
+          ]
+        },
+        {
+          "name": "Brown Skull",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Skin__z40\\Brown Skull.png"
+          ]
+        },
+        {
+          "name": "Orange Skull",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Skin__z40\\Orange Skull.png"
+          ]
+        },
+        {
+          "name": "Red Skull",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Skin__z40\\Red Skull.png"
+          ]
+        },
+        {
+          "name": "White Skull",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Skin__z40\\White Skull.png"
+          ]
+        },
+        {
+          "name": "Yellow Skull",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Skin__z40\\Yellow Skull.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mouth",
+      "traits": [
+        {
+          "name": "Black Blood Lips",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Mouth__z50\\Black Blood Lips.png"
+          ]
+        },
+        {
+          "name": "Blue Lips",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Mouth__z50\\Blue Lips.png"
+          ]
+        },
+        {
+          "name": "Green Lips",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Mouth__z50\\Green Lips.png"
+          ]
+        },
+        {
+          "name": "Red Blood Lips",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Mouth__z50\\Red Blood Lips.png"
+          ]
+        },
+        {
+          "name": "Red Lips",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Mouth__z50\\Red Lips.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Eyes",
+      "traits": [
+        {
+          "name": "Blue Eyes",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Eyes__z60\\Blue Eyes.png"
+          ]
+        },
+        {
+          "name": "Blue Pink Glasses",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Eyes__z60\\Blue Pink Glasses.png"
+          ]
+        },
+        {
+          "name": "Blue Red Glasses",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Eyes__z60\\Blue Red Glasses.png"
+          ]
+        },
+        {
+          "name": "Fashion Glasses",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Eyes__z60\\Fashion Glasses.png"
+          ]
+        },
+        {
+          "name": "Green Eyes 1",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Eyes__z60\\Green Eyes 1.png"
+          ]
+        },
+        {
+          "name": "Green Glasses",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Eyes__z60\\Green Glasses.png"
+          ]
+        },
+        {
+          "name": "Green Gradient Glasses",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Eyes__z60\\Green Gradient Glasses.png"
+          ]
+        },
+        {
+          "name": "Normal Eyes",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Eyes__z60\\Normal Eyes.png"
+          ]
+        },
+        {
+          "name": "Pink Orange Glasses",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Eyes__z60\\Pink Orange Glasses.png"
+          ]
+        },
+        {
+          "name": "Pixel Blue Glasses",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Eyes__z60\\Pixel Blue Glasses.png"
+          ]
+        },
+        {
+          "name": "Red Eyes",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Eyes__z60\\Red Eyes.png"
+          ]
+        },
+        {
+          "name": "Yellow Eyes",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Eyes__z60\\Yellow Eyes.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Extra",
+      "traits": [
+        {
+          "name": "Back Fan",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Extra__z70\\Back Fan__z-50.png"
+          ]
+        },
+        {
+          "name": "Bat Wings 1",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Extra__z70\\Bat Wings 1__z-50.png"
+          ]
+        },
+        {
+          "name": "Bat Wings 2",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Extra__z70\\Bat Wings 2__z-50.png"
+          ]
+        },
+        {
+          "name": "Bat Wings With Hair",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Extra__z70\\Bat Wings With Hair__z-50.png",
+            ".\\input\\test\\Extra__z70\\Bat Wings With Hair.png"
+          ]
+        },
+        {
+          "name": "Black Bat Wings With Hair",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Extra__z70\\Black Bat Wings With Hair__z-50.png",
+            ".\\input\\test\\Extra__z70\\Black Bat Wings With Hair.png"
+          ]
+        },
+        {
+          "name": "Black Bat Wings",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Extra__z70\\Black Bat Wings__z-50.png"
+          ]
+        },
+        {
+          "name": "Black Hair",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Extra__z70\\Black Hair.png"
+          ]
+        },
+        {
+          "name": "Cap",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Extra__z70\\Cap.png"
+          ]
+        },
+        {
+          "name": "Cat Ears",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Extra__z70\\Cat Ears.png"
+          ]
+        },
+        {
+          "name": "Cool Cap",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Extra__z70\\Cool Cap.png"
+          ]
+        },
+        {
+          "name": "Cracked Skull 1",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Extra__z70\\Cracked Skull 1.png"
+          ]
+        },
+        {
+          "name": "Cracked Skull 2",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Extra__z70\\Cracked Skull 2__z-20.png"
+          ]
+        },
+        {
+          "name": "Cracked Skull 3",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Extra__z70\\Cracked Skull 3__z-20.png"
+          ]
+        },
+        {
+          "name": "Eagle Wings With Hair",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Extra__z70\\Eagle Wings With Hair__z-50.png",
+            ".\\input\\test\\Extra__z70\\Eagle Wings With Hair.png"
+          ]
+        },
+        {
+          "name": "Eagle Wings",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Extra__z70\\Eagle Wings__z-50.png"
+          ]
+        },
+        {
+          "name": "Earring",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Extra__z70\\Earring__z-20.png"
+          ]
+        },
+        {
+          "name": "Hat",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Extra__z70\\Hat.png"
+          ]
+        },
+        {
+          "name": "Long Hair",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Extra__z70\\Long Hair__z-20.png"
+          ]
+        },
+        {
+          "name": "Pilot Cap 2",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Extra__z70\\Pilot Cap 2.png"
+          ]
+        },
+        {
+          "name": "Plants",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Extra__z70\\Plants__z-20.png"
+          ]
+        },
+        {
+          "name": "Police Cap",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Extra__z70\\Police Cap.png"
+          ]
+        },
+        {
+          "name": "Red Hair",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Extra__z70\\Red Hair.png"
+          ]
+        },
+        {
+          "name": "Red Wings 1",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Extra__z70\\Red Wings 1__z-50.png"
+          ]
+        },
+        {
+          "name": "Red Wings With Hair",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Extra__z70\\Red Wings With Hair__z-50.png",
+            ".\\input\\test\\Extra__z70\\Red Wings With Hair.png"
+          ]
+        },
+        {
+          "name": "Robe",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Extra__z70\\Robe.png"
+          ]
+        },
+        {
+          "name": "Sharp Edge Cover",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Extra__z70\\Sharp Edge Cover.png"
+          ]
+        },
+        {
+          "name": "Snake Crown",
+          "weight": 1,
+          "sources": [
+            ".\\input\\test\\Extra__z70\\Snake Crown.png"
+          ]
+        }
+      ]
+    }
+  ]
+}

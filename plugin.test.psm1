@@ -15,7 +15,7 @@ function Confirm-ERC721Metadata
 {
     param(
         [int]$Id,
-        [int[]]$GeneratedSequence,
+        [PSCustomObject[]]$GeneratedSequence,
         [PSCustomObject]$GeneratedMetadata,
         [PSCustomObject]$LayersConfig
         )

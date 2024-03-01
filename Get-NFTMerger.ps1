@@ -1,43 +1,11 @@
 <#
 .SYNOPSIS
-    Calculate all nft rarity from the metadata
+    Generate the nfts and its metadata from the sequence file.
 .DESCRIPTION
-    Calculate all nft rarity from the metadata
+    Generate the nfts and its metadata from the sequence file.
 .EXAMPLE
-    To get rarity of each trait in the collection:
-    .\Get-Rarity.ps1 -MetadataDirectory '.\output\sample4\erc721 metadata\'
-    Processing...
-    Rarity processed for total 500 nfts
-    
-    TraitName   Appeared RarityPercent TotalNfts
-    ---------   -------- ------------- ---------
-    SkinBase_14        6          1.20       500
-    Mouth_38           6          1.20       500
-    Eyes_0            15          3.00       500
-    Extra_3           12          2.40       500
-    Mouth_6           22          4.40       500
-    Mouth_25           7          1.40       500
-    Skin_2            11          2.20       500
-    Mouth_29           7          1.40       500
-    Mouth_2           18          3.60       500
-    Wings_0          103         20.60       500
-    SkinBase_57       14          2.80       500
-    ...........
-    ...........
-.EXAMPLE
-    To get rarity of a single nft in the collection:
-    .\Get-Rarity.ps1 -MetadataDirectory '.\output\sample4\erc721 metadata\' -SingleNftID 1
-    Processing...
-    Rarity processed for total 500 nfts
-    
-    TraitName  Appeared RarityPercent TotalNfts
-    ---------  -------- ------------- ---------
-    Skin_63           7          1.40       500
-    Eyes_1           25          5.00       500
-    SkinBase_3       10          2.00       500
-    Extra_15         27          5.40       500
-    Wings_4          97         19.40       500
-    Mouth_32          4          0.80       500
+    .\Get-NFTMerger.ps1 -Multithreaded -ConfigFile .\testconfig.json -SequenceFile .\testseqfile.json -OutputDirectory .\output -PluginModuleFilePath .\plugin.test.psm1
+    Loading plugin module...
 #>
 #Requires -Version 6.0
 [CmdletBinding()]
@@ -50,12 +18,15 @@ param(
     [Parameter(Mandatory=$true)]
     [ValidateScript({((Test-Path $_) -and (Test-Json (Get-Content $_ -Raw)))}, ErrorMessage="Sequence file does not exist or it is invalid")]
     [string]$SequenceFile,
+    #Output directory is where all the generated files will be stored.
     [Parameter(Mandatory=$true)]
     [ValidateScript({(Test-Path $_) -and ((Get-ChildItem $_).Length -eq 0)}, ErrorMessage="Need an empty directory to store the output")]
     [string]$OutputDirectory,
-    #To control over the metadatas which are generated
+    #To control over the metadatas which are generated.
     [ValidateScript({Test-Path $_}, ErrorMessage="The specified plugin module does not exist.")]
-    [string]$PluginModuleFilePath
+    [string]$PluginModuleFilePath,
+    #Use multithreading to generate nfts and metadata, this will speedup the process but will take more system resources.
+    [switch]$Multithreaded
 )
 
 Get-Module "nftgen.commons" | Remove-Module
@@ -123,21 +94,27 @@ function Get-ERC721Metadata
     param (
         [int]$Id,
         [ValidateNotNullOrEmpty()]
-        [int[]]$Sequence,
+        [PSCustomObject[]]$Sequence,
         [PSCustomObject]$Config
     )
+    
+    #[System.Collections.Generic.List[PSCustomObject]]$traits = [System.Collections.Generic.List[PSCustomObject]]::new()
+    $metadata_attributes = $Sequence | ForEach-Object {
+        if($_.TraitSourceIndex -eq 0)
+        {
+            $t_type = $Config.layers[$_.LayerIndex].name;
+            $t_val = $Config.layers[$_.LayerIndex].traits[$_.TraitIndex].name;
+            [PSCustomObject]@{
+                trait_type = $t_type
+                value = $t_val
+            }
+        }
+    }
     $metadata = [PSCustomObject]@{
         name = "NFT #$Id"
         description = "This NFT Id is #$Id"
         image = "ipfs://__CID__/$Id.png"
-        attributes = [PSCustomObject[]]@()
-    }
-    #[System.Collections.Generic.List[PSCustomObject]]$traits = [System.Collections.Generic.List[PSCustomObject]]::new()
-    $metadata.attributes = 0..($Sequence.Length-1) | ForEach-Object {
-        [PSCustomObject]@{
-            trait_type = $Config.layers[$_].name
-            value = [System.IO.Path]::GetFileNameWithoutExtension($Config.layers[$_].traits[$Sequence[$_]].sources[0])
-        }
+        attributes = $metadata_attributes
     }
 
     return $metadata;
@@ -146,56 +123,82 @@ function Get-TraitImagesFromSequence
 {
     param(
         [ValidateNotNullOrEmpty()]
-        [int[]]$Sequence,
+        [PSCustomObject[]]$Sequence,
         $Config
     )
-    for($i = 0; $i -lt $Sequence.Length; $i++)
+    foreach($t in $Sequence)
     {
-        foreach($tm in $Config.layers[$i].traits[$Sequence[$i]].sources)
-        {
-            $tm
-        }
+        $Config.layers[$t.LayerIndex].traits[$t.TraitIndex].sources[$t.TraitSourceIndex];
     }
-}
-
-$get_trait_images_from_sequence = ${function:Get-TraitImagesFromSequence}.ToString()
-$merge_traits_images_func = ${function:Merge-TraitImages}.ToString()
-$get_erc721_metadata_func = ${function:Get-ERC721Metadata}.ToString()
-$confirm_erc721_metadata_func = $null
-if($plugin_module_present)
-{
-    $confirm_erc721_metadata_func = ${function:Confirm-ERC721Metadata}.ToString()
 }
 
 
 $total_seq = $sequences.Sequences.Length;
 $total_completed = 0;
 
-0..($sequences.Sequences.Length-1) | ForEach-Object -Parallel {
-    ${function:Get-TraitImagesFromSequence} = $using:get_trait_images_from_sequence;
-    ${function:Merge-TraitImages} = $using:merge_traits_images_func;
-    ${function:Get-ERC721Metadata} = $using:get_erc721_metadata_func;
-    ${function:Confirm-ERC721Metadata} = $using:confirm_erc721_metadata_func;
-
-    Write-Information "Current: $_";
-    $seq = $using:sequences.Sequences;
-    Write-Information "Current: $($seq[$_])";
-    $sequences_to_paths = Get-TraitImagesFromSequence -Sequence $seq[$_] -Config $using:config;
-    $nft_output = Join-Path $using:OutputDirectory "$_.png"
-    $metadata_output = Join-Path $using:OutputDirectory "$_.json"
-    Merge-TraitImages $sequences_to_paths $nft_output
-    $metadata = Get-ERC721Metadata -Id $_ -Sequence $seq[$_] -Config $using:config;
-    
-    if($using:plugin_module_present)
+if($Multithreaded)
+{
+    $get_trait_images_from_sequence = ${function:Get-TraitImagesFromSequence}.ToString()
+    $merge_traits_images_func = ${function:Merge-TraitImages}.ToString()
+    $get_erc721_metadata_func = ${function:Get-ERC721Metadata}.ToString()
+    $confirm_erc721_metadata_func = $null
+    if($plugin_module_present)
     {
-        $metadata = Confirm-ERC721Metadata -Id $_ -GeneratedSequence $seq[$_] -GeneratedMetadata $metadata -LayersConfig $using:config;
+        $confirm_erc721_metadata_func = ${function:Confirm-ERC721Metadata}.ToString()
     }
+    0..($sequences.Sequences.Length-1) | ForEach-Object -Parallel {
+        ${function:Get-TraitImagesFromSequence} = $using:get_trait_images_from_sequence;
+        ${function:Merge-TraitImages} = $using:merge_traits_images_func;
+        ${function:Get-ERC721Metadata} = $using:get_erc721_metadata_func;
+        ${function:Confirm-ERC721Metadata} = $using:confirm_erc721_metadata_func;
+
+        Write-Information "Current: $_";
+        $seq = $using:sequences.Sequences;
+        Write-Information "Current: $($seq[$_])";
+        $sequences_to_paths = Get-TraitImagesFromSequence -Sequence $seq[$_] -Config $using:config;
+        $nft_output = Join-Path $using:OutputDirectory "$_.png"
+        $metadata_output = Join-Path $using:OutputDirectory "$_.json"
+        Merge-TraitImages $sequences_to_paths $nft_output
+        $metadata = Get-ERC721Metadata -Id $_ -Sequence $seq[$_] -Config $using:config;
+        
+        if($using:plugin_module_present)
+        {
+            $metadata = Confirm-ERC721Metadata -Id $_ -GeneratedSequence $seq[$_] -GeneratedMetadata $metadata -LayersConfig $using:config;
+        }
+        
+        $metadata | ConvertTo-Json -Compress >> $metadata_output
+        $_
+    } | ForEach-Object {
+        $total_completed++;
+        $work_done_pc = ($total_completed / $total_seq) * 100
+        #Write-Information "Total $total_completed out of $total_seq completed."
+        Write-Progress -Activity "Merging in Progress" -Status "$work_done_pc% Complete, Finished: $_.png" -PercentComplete $work_done_pc
+    }
+}
+else
+{
+    0..($sequences.Sequences.Length-1) | ForEach-Object {
     
-    $metadata | ConvertTo-Json -Compress >> $metadata_output
-    $_
-} | ForEach-Object {
-    $total_completed++;
-    $work_done_pc = ($total_completed / $total_seq) * 100
-    #Write-Information "Total $total_completed out of $total_seq completed."
-    Write-Progress -Activity "Merging in Progress" -Status "$work_done_pc% Complete, Finished: $_.png" -PercentComplete $work_done_pc
+        Write-Information "Current: $_";
+        $seq = $sequences.Sequences;
+        Write-Information "Current: $($seq[$_])";
+        $sequences_to_paths = Get-TraitImagesFromSequence -Sequence $seq[$_] -Config $config;
+        $nft_output = Join-Path $OutputDirectory "$_.png"
+        $metadata_output = Join-Path $OutputDirectory "$_.json"
+        Merge-TraitImages $sequences_to_paths $nft_output
+        $metadata = Get-ERC721Metadata -Id $_ -Sequence $seq[$_] -Config $config;
+        
+        if($plugin_module_present)
+        {
+            $metadata = Confirm-ERC721Metadata -Id $_ -GeneratedSequence $seq[$_] -GeneratedMetadata $metadata -LayersConfig $config;
+        }
+        
+        $metadata | ConvertTo-Json -Compress >> $metadata_output
+        $_
+    } | ForEach-Object {
+        $total_completed++;
+        $work_done_pc = ($total_completed / $total_seq) * 100
+        #Write-Information "Total $total_completed out of $total_seq completed."
+        Write-Progress -Activity "Merging in Progress" -Status "$work_done_pc% Complete, Finished: $_.png" -PercentComplete $work_done_pc
+    }
 }
