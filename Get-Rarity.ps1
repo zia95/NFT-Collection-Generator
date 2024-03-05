@@ -1,4 +1,3 @@
-#Requires -Version 6.0
 <#
 .SYNOPSIS
     Calculate all nft rarity from the metadata
@@ -40,6 +39,7 @@
     Wings_4          97         19.40       500
     Mouth_32          4          0.80       500
 #>
+#Requires -Version 6.0
 param(
     #Specify the directoy where all the metadata is stored.
     [Parameter(Mandatory=$true)]
@@ -67,6 +67,7 @@ foreach($f in $dir_files)
     if(-not $f.PSIsContainer)
     {
         $data = Get-Content $f | ConvertFrom-Json
+        
         [bool]$single_nft_found = $false;
         if($SingleNftID -ne -1)
         {
