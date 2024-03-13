@@ -1,0 +1,17 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "delete seq file (sample 10)",
+            "type": "shell",
+            "command": "if(Test-Path './config/sl_sample_10.seq.json') { rm ./config/sl_sample_10.seq.json }"
+        },
+        {
+            "label": "delete nft file (sample 10)",
+            "type": "shell",
+            "command": "rm ./output/sl_sample_10/*"
+        }
+    ]
+}

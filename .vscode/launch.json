@@ -1,0 +1,24 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "PowerShell: Sequence Generator File (Sample 10)",
+            "type": "PowerShell",
+            "request": "launch",
+            "preLaunchTask": "delete seq file (sample 10)",
+            "script": "./Get-NFTSequence.ps1",
+            "args": ["-ConfigFile", "./config/sl_sample_10.config.json", "-OutputSequenceFile", "./config/sl_sample_10.seq.json", "-Count", "500", "-PluginModuleFilePath", "./config/sl_sample_10.plugin.psm1"]
+        },
+        {
+            "name": "PowerShell: Merger Generator File (Sample 10)",
+            "type": "PowerShell",
+            "request": "launch",
+            "preLaunchTask": "delete nft file (sample 10)",
+            "script": "./Get-NFTMerger.ps1",
+            "args": ["-Multithreaded", "-ConfigFile", "./config/sl_sample_10.config.json", "-SequenceFile", "./config/sl_sample_10.seq.json", "-OutputDirectory", "./output/sl_sample_10"]
+        }
+    ]
+}
