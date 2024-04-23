@@ -25,21 +25,46 @@
     NFT #1026 This NFT Id is #1026 ipfs://__CID__/1026.png {@{trait_type=Background; value=Top Blocks}, @{trait_type=SkinB…
     .......
     .......
+.EXAMPLE
+    Using in combination with read-erc721metadata script using pipeline.
+    .\Read-ERC721Metadata.ps1 -ERC721MetadataDirectory .\output\sl_sample_12\ | .\Where-NFT.ps1 -Filter {$_.name -like "NFT #9*"}
+
+    name     description         image                  attributes
+    ----     -----------         -----                  ----------
+    NFT #9   This NFT Id is #9   ipfs://__CID__/9.png   {@{trait_type=Background; value=Light Blocks}, @{trait_type=SkinBa…
+    NFT #90  This NFT Id is #90  ipfs://__CID__/90.png  {@{trait_type=Background; value=Tunnel}, @{trait_type=SkinBase; va…
+    NFT #900 This NFT Id is #900 ipfs://__CID__/900.png {@{trait_type=Background; value=Cliffs 2}, @{trait_type=SkinBase; …
+    .......
+    .......
 #>
 #Requires -Version 6.0
-[CmdletBinding()]
+[CmdletBinding(DefaultParameterSetName = 'ByDir')]
 param(
     #Directory where all the erc721 nft metadata is stored.
-    [Parameter(Mandatory=$true)]
+    [Parameter(Mandatory=$true, ParameterSetName = 'ByDir')]
     [ValidateScript({(Test-Path $_) -and ((Get-ChildItem $_).Length -ne 0)}, ErrorMessage="The directory does not exists or is empty.")]
     [string]$ERC721MetadataDirectory,
+    #ERC721 nft metadata is stored read by Read-ERC721 script.
+    [Parameter(Mandatory=$true, ParameterSetName = 'ByData', ValueFromPipeline=$true)]
+    [ValidateNotNullOrEmpty()]
+    [PSCustomObject[]]$ERC721MetadataData,
     #Script block where all the filter criteria is present.
-    [Parameter(Mandatory=$true)]
+    [Parameter(Mandatory=$true, ParameterSetName = 'ByDir')]
+    [Parameter(Mandatory=$true, ParameterSetName = 'ByData')]
     [System.Management.Automation.ScriptBlock]$Filter
 )
+process
+{
+    if($ERC721MetadataDirectory)
+    {
+        $metadata_files = Get-ChildItem $ERC721MetadataDirectory -Filter "*.json";
 
-$metadata_files = Get-ChildItem $ERC721MetadataDirectory -Filter "*.json";
+        $metadatas = $metadata_files | ForEach-Object { Get-Content $_ -Raw | ConvertFrom-Json}
 
-$metadatas = $metadata_files | ForEach-Object { Get-Content $_ -Raw | ConvertFrom-Json}
-
-$metadatas | Where-Object $Filter
+        $metadatas | Where-Object $Filter
+    }
+    else
+    {
+        $ERC721MetadataData | Where-Object $Filter
+    }
+}
