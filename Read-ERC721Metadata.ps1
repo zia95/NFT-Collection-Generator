@@ -1,0 +1,49 @@
+<#
+.SYNOPSIS
+    Reads the erc721 token metadata
+.DESCRIPTION
+    Reads the erc721 token metadata
+.EXAMPLE
+    To read the metadata
+    .\Read-ERC721Metadata.ps1 -ERC721MetadataDirectory .\output\sl_sample_12_teeths\
+
+    name     description         image                  attributes
+    ----     -----------         -----                  ----------
+    NFT #0   This NFT Id is #0   ipfs://__CID__/0.png   {@{trait_type=Background; value=Pathway 2}, @{trait_type=SkinBase;…
+    NFT #1   This NFT Id is #1   ipfs://__CID__/1.png   {@{trait_type=Background; value=Top Blocks}, @{trait_type=SkinBase…
+    NFT #10  This NFT Id is #10  ipfs://__CID__/10.png  {@{trait_type=Background; value=Field}, @{trait_type=SkinBase; val…
+    .......
+    .......
+.EXAMPLE
+    Filter the metadata by name of nft
+    .\Read-ERC721Metadata.ps1 -ERC721MetadataDirectory .\output\sl_sample_12_teeths\ | Where-Object {$_.name -like "NFT #1*"}
+
+    name     description         image                  attributes
+    ----     -----------         -----                  ----------
+    NFT #1   This NFT Id is #1   ipfs://__CID__/1.png   {@{trait_type=Background; value=Top Blocks}, @{trait_type=SkinBase…
+    NFT #10  This NFT Id is #10  ipfs://__CID__/10.png  {@{trait_type=Background; value=Field}, @{trait_type=SkinBase; val…
+    NFT #100 This NFT Id is #100 ipfs://__CID__/100.png {@{trait_type=Background; value=Top Blocks}, @{trait_type=SkinBase…
+    .......
+    .......
+.EXAMPLE
+    Filter the metadata by the traits of nfts
+    .\Read-ERC721Metadata.ps1 -ERC721MetadataDirectory .\output\sl_sample_12_teeths\ | Where-Object {$_.attributes | Where-Object {$_.trait_type -eq "Background" -and $_.value -like "Top*" } }
+
+    name     description         image                  attributes
+    ----     -----------         -----                  ----------
+    NFT #1   This NFT Id is #1   ipfs://__CID__/1.png   {@{trait_type=Background; value=Top Blocks}, @{trait_type=SkinBase…
+    NFT #100 This NFT Id is #100 ipfs://__CID__/100.png {@{trait_type=Background; value=Top Blocks}, @{trait_type=SkinBase…
+    NFT #102 This NFT Id is #102 ipfs://__CID__/102.png {@{trait_type=Background; value=Top Blocks}, @{trait_type=SkinBase…
+    .......
+    .......
+#>
+#Requires -Version 6.0
+[CmdletBinding()]
+param(
+    #Directory where all the erc721 nft metadata is stored.
+    [Parameter(Mandatory=$true)]
+    [ValidateScript({(Test-Path $_) -and ((Get-ChildItem $_).Length -ne 0)}, ErrorMessage="The directory does not exists or is empty.")]
+    [string]$ERC721MetadataDirectory
+)
+
+Get-ChildItem $ERC721MetadataDirectory -Filter "*.json" | ForEach-Object { Get-Content $_ -Raw | ConvertFrom-Json}
