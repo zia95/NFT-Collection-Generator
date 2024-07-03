@@ -41,9 +41,11 @@ Write-Host "Processing..."
 [double]$total_processed = 0;
 foreach($f in $dir_files)
 {
+    if($f.PSIsContainer) { continue; }
+    if([System.IO.Path]::GetExtension($f) -ne ".json") { continue; }
+    
     $total_processed++;
     [int]$progress_percentage = (($total_processed/$total)*100)
-    if($f.PSIsContainer) {continue;}
 
     [int]$metadata_id = [int]::Parse([System.IO.Path]::GetFileNameWithoutExtension($f));
 

@@ -12,6 +12,11 @@
             "label": "delete nft file (sample 10)",
             "type": "shell",
             "command": "rm ./output/sl_sample_10/*"
+        },
+        {
+            "label": "delete seq file (sample 13)",
+            "type": "shell",
+            "command": "if(Test-Path './config/sl_sample_13_teeths.seq.json') { rm ./config/sl_sample_13_teeths.seq.json }"
         }
     ]
 }

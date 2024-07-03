@@ -43,16 +43,11 @@
 param(
     #Specify the directoy where all the metadata is stored.
     [Parameter(Mandatory=$true)]
+    [ValidateScript({Test-Path $_}, ErrorMessage="Metadata directory does not exists.")]
     [string]$MetadataDirectory,
     #Measure single NFT rarity
     [int]$SingleNftID = -1
 )
-
-if(-not (Test-Path $MetadataDirectory))
-{
-    Write-Error "Metadata directory does not exists. ($MetadataDirectory)"
-    exit 1
-}
 
 $MetadataDirectory = Resolve-Path $MetadataDirectory
 $dir_files = Get-ChildItem $MetadataDirectory
@@ -64,51 +59,51 @@ Write-Host "Processing..."
 
 foreach($f in $dir_files)
 {
-    if(-not $f.PSIsContainer)
+    if($f.PSIsContainer) { continue; }
+    if([System.IO.Path]::GetExtension($f) -ne ".json") { continue; }
+
+    $data = Get-Content $f | ConvertFrom-Json
+    
+    [bool]$single_nft_found = $false;
+    if($SingleNftID -ne -1)
     {
-        $data = Get-Content $f | ConvertFrom-Json
-        
-        [bool]$single_nft_found = $false;
-        if($SingleNftID -ne -1)
+        [int]$metadata_id = [int]::Parse([System.IO.Path]::GetFileNameWithoutExtension($f));
+        if($metadata_id -eq $SingleNftID)
         {
-            [int]$metadata_id = [int]::Parse([System.IO.Path]::GetFileNameWithoutExtension($f));
-            if($metadata_id -eq $SingleNftID)
+            $single_nft_found = $true
+        }
+    }
+    
+    [bool]$attr_exist = $false
+    
+    foreach($prop in ($data | Get-Member))
+    {
+        if($prop.Name -ieq "attributes")
+        {
+            $attr_exist = $true
+            break;
+        }
+    }
+    
+    if($attr_exist -eq $false)
+    {
+        Write-Error "Attribute property missing in $f";
+        continue;
+    }
+    
+    foreach($trait in $data.attributes)
+    {
+        $trait_id = "$($trait.trait_type)_$($trait.value)"
+        $traits_count_table[$trait_id] += 1;
+        if($single_nft_found)
+        {
+            if($null -eq $single_traits_count_table)
             {
-                $single_nft_found = $true
+                $single_traits_count_table = @{};
             }
-        }
-        
-        [bool]$attr_exist = $false
-        
-        foreach($prop in ($data | Get-Member))
-        {
-            if($prop.Name -ieq "attributes")
-            {
-                $attr_exist = $true
-                break;
-            }
-        }
-        
-        if($attr_exist -eq $false)
-        {
-            Write-Error "Attribute property missing in $f";
-            continue;
-        }
-        
-        foreach($trait in $data.attributes)
-        {
-            $trait_id = "$($trait.trait_type)_$($trait.value)"
-            $traits_count_table[$trait_id] += 1;
             if($single_nft_found)
             {
-                if($null -eq $single_traits_count_table)
-                {
-                    $single_traits_count_table = @{};
-                }
-                if($single_nft_found)
-                {
-                    $single_traits_count_table[$trait_id] += 1;
-                }
+                $single_traits_count_table[$trait_id] += 1;
             }
         }
     }
@@ -145,4 +140,3 @@ foreach($tkey in $traits_count_table.Keys)
     $result
     $results.Add($result);
 }
-#return $results

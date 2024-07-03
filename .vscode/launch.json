@@ -19,6 +19,14 @@
             "preLaunchTask": "delete nft file (sample 10)",
             "script": "./Get-NFTMerger.ps1",
             "args": ["-Multithreaded", "-ConfigFile", "./config/sl_sample_10.config.json", "-SequenceFile", "./config/sl_sample_10.seq.json", "-OutputDirectory", "./output/sl_sample_10"]
+        },
+        {
+            "name": "PowerShell: Sequence Generator File (Sample 13)",
+            "type": "PowerShell",
+            "request": "launch",
+            "preLaunchTask": "delete seq file (sample 13)",
+            "script": "./Get-NFTSequence.ps1",
+            "args": ["-ConfigFile", "./config/sl_sample_13_teeths.config.json", "-OutputSequenceFile", "./config/sl_sample_13_teeths.seq.json", "-Count", "5000", "-BlacklistFile", "./config/sl_sample_13_teeths.blacklist.json", "-PluginModuleFilePath", "./config/sl_sample_13_teeths.plugin.psm1"]
         }
     ]
 }

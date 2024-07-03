@@ -29,6 +29,10 @@ param(
     [Parameter(Mandatory=$true)]
     [ValidateScript({-not (Test-Path $_)}, ErrorMessage="Output file already exists.")]
     [string]$OutputSequenceFile,
+    #Blacklist file where some sequences are set to be ignored.
+    [Parameter(Mandatory=$true)]
+    [ValidateScript({((Test-Path $_) -and (Test-Json (Get-Content $_ -Raw)))}, ErrorMessage="Config file does not exist or it is invalid")]
+    [string]$BlacklistFile,
     #When the specified number of sequences fail in a row, ask whether to keep generating (until successful or again hit fail...) or quit
     [int]$PauseWhenSequenceFail = 0,
     #To control over the sequences which are generated
@@ -55,6 +59,11 @@ if($plugin_module_present)
 
 
 $ConfigFile = Resolve-Path $ConfigFile
+if($null -ne $BlacklistFile)
+{
+    $BlacklistFile = Resolve-Path $BlacklistFile
+}
+
 
 
 function Get-WeightedRandomTrait
@@ -140,8 +149,68 @@ function Test-IsSequenceUnique
     }
     return $is_unique
 }
+function Test-IsSequenceBlacklisted
+{
+    param([PSCustomObject]$Config, [PSCustomObject[]] $Blacklist, [PSCustomObject[]] $Sequence)
+
+    if($null -eq $Blacklist)
+    {
+        return $false;
+    }
+
+    [bool]$is_blacklisted = $false;
+    foreach($bls in $Blacklist)
+    {
+        $blstraits = $bls.attributes;
+        $seq_traits_len = $Sequence.Length;
+        
+        [int]$num_of_traits_blacklisted = 0;
+
+        foreach($blst in $blstraits)
+        {
+            [bool]$is_trait_blacklisted = $false;
+            for($i = 0; $i -lt $seq_traits_len; $i++)
+            {
+                $layer_idx = $Sequence[$i].LayerIndex;
+                $trait_idx = $Sequence[$i].TraitIndex;
+
+                $layer_name = $Config.layers[$layer_idx].name;
+                $trait_name = $Config.layers[$layer_idx].traits[$trait_idx].name;
+                if($blst.trait_type -eq $layer_name)
+                {
+                    $is_trait_blacklisted = $blst.value -eq $trait_name;
+                    break;
+                }
+            }
+            if($is_trait_blacklisted)
+            {
+                $num_of_traits_blacklisted++;
+            }
+            else
+            {
+                break;
+            }
+        }
+        if($blstraits.Length -ne 0)
+        {
+            $is_blacklisted = $blstraits.Length -eq $num_of_traits_blacklisted;
+            if($is_blacklisted)
+            {
+                break;
+            }
+        }
+    }
+    return $is_blacklisted;
+}
 
 $config = ConvertFrom-Json (Get-Content $ConfigFile -Raw)
+$blacklist = $null;
+if($null -ne $BlacklistFile)
+{
+    $blacklist = ConvertFrom-Json (Get-Content $BlacklistFile -Raw)
+}
+
+
 #[System.Collections.Generic.Dictionary[string, PSCustomObject[]]]$layers_dict = Get-LayersDict -Config $config;
 [System.Collections.Generic.List[PSCustomObject[]]]$sequences = [System.Collections.Generic.List[PSCustomObject[]]]::new();
 
@@ -158,11 +227,19 @@ while ($sequences.Count -ne $Count)
     }
     if(Test-IsSequenceUnique -Sequences $sequences -SequenceToTest $seq)
     {
-        $total_failed_in_row = 0;
-        $sequences.Add($seq);
-        #Write-Host "Found unique sequence: $seq, Total: $($sequences.Count)";
-        [double]$progress_percentage = (([double]$sequences.Count/$Count)*100)
-        Write-Progress -Activity "Sequence Generation in Progress" -Status "$progress_percentage% Complete, Current: $seq" -PercentComplete $progress_percentage
+        if(!(Test-IsSequenceBlacklisted -Config $config -Blacklist $blacklist -Sequence $seq))
+        {
+            $total_failed_in_row = 0;
+            $sequences.Add($seq);
+            #Write-Host "Found unique sequence: $seq, Total: $($sequences.Count)";
+            [double]$progress_percentage = (([double]$sequences.Count/$Count)*100)
+            Write-Progress -Activity "Sequence Generation in Progress" -Status "$progress_percentage% Complete, Current: $seq" -PercentComplete $progress_percentage
+        }
+        else
+        {
+            $total_failed_in_row++;
+            Write-Warning "Generated sequence was blacklisted, discarding sequence: $seq";
+        }
     }
     else
     {
