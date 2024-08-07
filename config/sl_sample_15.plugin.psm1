@@ -38,9 +38,11 @@ function move_sequence {
     }
 }
 
-$back_fan_or_wings_traits_name = @("Back Fan", "Bat Wings 1", "Bat Wings 2", "Bat Wings with Cracked Skull", "Bat Wings With Hair", "Black Bat Wings With Hair", `
-"Black Bat Wings", "Black Wings with Cracked Skull", "Eagle Wings with Cracked Skull", "Eagle Wings With Hair", "Eagle Wings", "Red Wings 1", "Red Wings with Cracked Skull", "Red Wings With Hair");
-$cracked_skull_or_earrings_or_long_hair_or_plants_head_traits_name = @("Cracked Skull 2", "Cracked Skull 3", "Earring 1", "Earring 2", "Long Hair", "Plants Head");
+$back_fan_or_wings_or_muffler_traits_name = @("Back Fan", "Bat Wings 1", "Bat Wings 2", "Bat Wings with Cracked Skull", "Bat Wings With Hair", "Black Bat Wings With Hair", `
+"Black Bat Wings", "Black Wings with Cracked Skull", "Eagle Wings with Cracked Skull", "Eagle Wings With Hair", "Eagle Wings", "Red Wings 1", "Red Wings with Cracked Skull", `
+"Red Wings With Hair", "Muffler");
+
+$cracked_skull_or_earrings_or_long_hair_or_plants_head_traits_name = @("Cracked Skull 2", "Cracked Skull 3", "Earring 1", "Earring 2", "Long Hair", "Plants Head", "Flower Head");
 
 $skip_skin_names = @("Green Skull 3", "Yellow Skull 2", "Black Skull 1", "Black Skull 3", "Black Skull 5", "Black Skull 4", "Purple Skull 7", "Purple Skull 5", `
 "Orange Skull 1", "Orange Skull 1", "Green Skull 4", "Purple Skull 2", "Purple Skull 4", "Purple Skull 3", "Red Skull 3", "Brown Skull 2", "Purple Skull 2", `
@@ -61,6 +63,7 @@ $tooth_skin_tratis = @("Black Tooth Skull 1","Black Tooth Skull 2","Black Tooth 
 "Green Tooth Skull 6","Green Tooth Skull 7","Green Tooth Skull 8","Green Tooth Skull 9","Purple Tooth Skull 1","Purple Tooth Skull 2","Purple Tooth Skull 3","Purple Tooth Skull 4", `
 "Purple Tooth Skull 5","Purple Tooth Skull 6","Purple Tooth Skull 8","Red Tooth Skull 1","Red Tooth Skull 2","Red Tooth Skull 3","Yellow Tooth Skull 1","Yellow Tooth Skull 5","Yellow Tooth Skull 6");
 
+$ext_layer_traits_require_no_eyes = @("Snake Crown", "Snakes", "Octopus Tentacle", "Black Glasses With Hair")
 function Confirm-Sequence
 {
     param(
@@ -74,9 +77,9 @@ function Confirm-Sequence
     $GenSeqLen = $GeneratedSequence.Length;
     
     $big_tongue_index = -1;
-    $back_fan_or_wings_index = -1;
+    $back_fan_or_wings_or_muffler_index = -1;
     $cracked_skull_or_earrings_or_long_hair_or_plants_head_index = -1;
-    $snake_crown_index = -1;
+    $ext_layer_traits_req_no_eyes_index = -1;
     
     $curr_seq_skin_base_name = $null;
     $curr_seq_skin_name = $null;
@@ -105,13 +108,13 @@ function Confirm-Sequence
         {
             $curr_seq_mouth_name = $trait_name;
         }
-        if($GeneratedSequence[$i].LayerIndex -eq 5)
+        if($layer_name -eq "Extra")
         {
-            if($trait_name  -in $back_fan_or_wings_traits_name)
+            if($trait_name  -in $back_fan_or_wings_or_muffler_traits_name)
             {
                 if($GeneratedSequence[$i].TraitSourceIndex -eq 0)
                 {
-                    $back_fan_or_wings_index = $i;
+                    $back_fan_or_wings_or_muffler_index = $i;
                     continue;
                 }
             }
@@ -123,11 +126,11 @@ function Confirm-Sequence
                     continue;
                 }
             }
-            if($trait_name -eq "Snake Crown")
+            if($trait_name -in $ext_layer_traits_require_no_eyes)
             {
                 if($GeneratedSequence[$i].TraitSourceIndex -eq 0)
                 {
-                    $snake_crown_index = $i;
+                    $ext_layer_traits_req_no_eyes_index = $i;
                     continue;
                 }
             }
@@ -163,17 +166,17 @@ function Confirm-Sequence
     <#
     adjust these traits layer order because they don't follow the default one.
     #>
-    if($back_fan_or_wings_index -ne -1)
+    if($back_fan_or_wings_or_muffler_index -ne -1)
     {
         $to_swap_idx = 1;
-        $GeneratedSequence = move_sequence -GeneratedSequence $GeneratedSequence -SourceIndex $back_fan_or_wings_index -DestinationIndex $to_swap_idx
+        $GeneratedSequence = move_sequence -GeneratedSequence $GeneratedSequence -SourceIndex $back_fan_or_wings_or_muffler_index -DestinationIndex $to_swap_idx
     }
     <#
     adjust these traits layer order because they don't follow the default one.
     #>
     if($big_tongue_index -ne -1)
     {
-        if($back_fan_or_wings_index -ne -1)
+        if($back_fan_or_wings_or_muffler_index -ne -1)
         {
             return $null;
         }
@@ -191,7 +194,7 @@ function Confirm-Sequence
     <#
     remove eyes trait when snake crow trait is present because it comes with eyes already.
     #>
-    if($snake_crown_index -ne -1)
+    if($ext_layer_traits_req_no_eyes_index -ne -1)
     {
         $GeneratedSequence = $GeneratedSequence | Where-Object { $LayersConfig.layers[$_.LayerIndex].name -ne "Eyes" }
     }

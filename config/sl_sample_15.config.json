@@ -2,7 +2,7 @@
   "name": "newly generated",
   "layers": [
     {
-      "name": "1_Background",
+      "name": "Background",
       "traits": [
         {
           "name": "Black Broken Glass",
@@ -105,7 +105,7 @@
       ]
     },
     {
-      "name": "2_SkinBase",
+      "name": "SkinBase",
       "traits": [
         {
           "name": "Black 1",
@@ -292,7 +292,7 @@
       ]
     },
     {
-      "name": "3_Skin",
+      "name": "Skin",
       "traits": [
         {
           "name": "Black Skull 1",
@@ -746,7 +746,7 @@
       ]
     },
     {
-      "name": "4_Mouth",
+      "name": "Mouth",
       "traits": [
         {
           "name": "Black Blood Lips",
@@ -1124,7 +1124,7 @@
       ]
     },
     {
-      "name": "5_Eyes",
+      "name": "Eyes",
       "traits": [
         {
           "name": "Angry Eyes 2",
@@ -1276,7 +1276,7 @@
       ]
     },
     {
-      "name": "6_Extra",
+      "name": "Extra",
       "traits": [
         {
           "name": "Bat Wings 1",
@@ -1338,10 +1338,10 @@
           ]
         },
         {
-          "name": "Cap 2",
+          "name": "Cap 4",
           "weight": 25,
           "sources": [
-            ".\\input\\sl_layers\\6_Extra\\Cap 2_25.png"
+            ".\\input\\sl_layers\\6_Extra\\Cap 4_25.png"
           ]
         },
         {
