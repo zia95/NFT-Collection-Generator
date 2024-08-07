@@ -22,10 +22,10 @@ param(
     [Parameter(Mandatory=$true)]
     [ValidateScript({-not (Test-Path $_)}, ErrorMessage="Output file already exists.")]
     [string]$OutputConfigFile,
-    #Try to parse trait name from file name.
+    #Try to parse trait name from file name. For this to work, make sure trait file names are in right format i.e. <traitname>_<weight>.png
     [Parameter]
     [switch]$TryParseTraitName,
-    #Try to parse weight from file name.
+    #Try to parse weight from file name. For this to work, make sure trait file names are in right format i.e. <traitname>_<weight>.png
     [Parameter]
     [switch]$TryParseWeight
 )
