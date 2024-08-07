@@ -53,13 +53,13 @@ $skip_skinbase_names = @("Black 1", "Black 1", "Black 1", "Black 1", "Black 1", 
 
 $tooth_mouth_traits = @("Blue Tooth 1","Blue Tooth 2","Blue Tooth 3","Blue Tooth 4","Blue Tooth 5","Blue Tooth 6","Blue Tooth 7","Blue Tooth 8","Blue Tooth 9","Brown Tooth 1", `
 "Brown Tooth 2","Brown Tooth 3","Brown Tooth 4","Brown Tooth 5","Brown Tooth 6","Green Tooth 1","Green Tooth 2","Green Tooth 3","Green Tooth 4","Green Tooth 5","Pink Tooth 1", `
-"Purple Tooth 1","Purple Tooth 2","Purple Tooth 3","Purple Tooth 4","Red Tooth 1","Red Tooth 2","Red Tooth 3","Red Tooth 4","Red Tooth 5","Red Tooth 6","White Tooth 1", `
-"Yellow Tooth 1","Yellow Tooth 2","Yellow Tooth 3","Yellow Tooth 4","Yellow Tooth 5","Yellow Tooth 6","Yellow Tooth 7");
+"Purple Tooth 1","Purple Tooth 2","Purple Tooth 3","Purple Tooth 4","Red Tooth 1","Red Tooth 2","Red Tooth 3","Red Tooth 4","Red Tooth 5","Red Tooth 6","White Tooth 1","Yellow Tooth 1", `
+"Yellow Tooth 2","Yellow Tooth 3","Yellow Tooth 4","Yellow Tooth 5","Yellow Tooth 6","Yellow Tooth 7");
 
 $tooth_skin_tratis = @("Black Tooth Skull 1","Black Tooth Skull 2","Black Tooth Skull 3","Black Tooth Skull 4","Black Tooth Skull 5","Black Tooth Skull 6","Blue Tooth Skull 2", `
 "Brown Tooth Skull 1","Brown Tooth Skull 2","Brown Tooth Skull 3","Brown Tooth Skull 4","Green Tooth Skull 2","Green Tooth Skull 3","Green Tooth Skull 4","Green Tooth Skull 5", `
 "Green Tooth Skull 6","Green Tooth Skull 7","Green Tooth Skull 8","Green Tooth Skull 9","Purple Tooth Skull 1","Purple Tooth Skull 2","Purple Tooth Skull 3","Purple Tooth Skull 4", `
-"Purple Tooth Skull 5","Purple Tooth Skull 6","Purple Tooth Skull 8","Red Tooth Skull 1","Red Tooth Skull 2","Red Tooth Skull 3","Yellow Tooth Skull 1","Yellow Tooth Skull 5", "Yellow Tooth Skull 6");
+"Purple Tooth Skull 5","Purple Tooth Skull 6","Purple Tooth Skull 8","Red Tooth Skull 1","Red Tooth Skull 2","Red Tooth Skull 3","Yellow Tooth Skull 1","Yellow Tooth Skull 5","Yellow Tooth Skull 6");
 
 function Confirm-Sequence
 {

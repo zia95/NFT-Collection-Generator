@@ -21,7 +21,13 @@ param(
     #Config file to be generated.
     [Parameter(Mandatory=$true)]
     [ValidateScript({-not (Test-Path $_)}, ErrorMessage="Output file already exists.")]
-    [string]$OutputConfigFile
+    [string]$OutputConfigFile,
+    #Try to parse trait name from file name.
+    [Parameter]
+    [switch]$TryParseTraitName,
+    #Try to parse weight from file name.
+    [Parameter]
+    [switch]$TryParseWeight
 )
 
 $LayersDirectory = Resolve-Path $LayersDirectory
@@ -37,9 +43,27 @@ function Get-TraitsConfigFromDirectory
         traits = [PSCustomObject[]]@()
     }
     $dirlayerconfig.traits = Get-ChildItem $LayerDirectory | ForEach-Object {
+        $n = [System.IO.Path]::GetFileNameWithoutExtension($_);#default value
+        $w = 1;#default value
+        if(($TryParseTraitName -or $TryParseWeight) -and $n.Contains('_'))
+        {
+            $nw = $n.Split('_');
+            if($nw.Count == 2)
+            {
+                if($TryParseTraitName -and -not [string]::IsNullOrWhiteSpace($nw[0]))
+                {
+                    $n = $nw[0];
+                }
+                [int]$wref = 0;
+                if($TryParseWeight -and -not [string]::IsNullOrWhiteSpace($nw[1]) -and [int]::TryParse($nw[1], [ref]$wref))
+                {
+                    $w = $wref;
+                }
+            }
+        }
         [PSCustomObject]@{
-            name = [System.IO.Path]::GetFileNameWithoutExtension($_)
-            weight = 1
+            name = $n
+            weight = $w
             sources = @(Resolve-Path -Relative $_)
         }
     }
