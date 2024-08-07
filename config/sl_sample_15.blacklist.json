@@ -1,0 +1,540 @@
+[
+  {
+    "name": "NFT #15",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Black 1"},
+      {"trait_type":"Skin", "value":"Green Tooth Skull 4"}
+    ]
+  },
+  {
+    "name": "NFT #21",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Purple 1"},
+      {"trait_type":"Skin", "value":"Green Tooth Skull 6"}
+    ]
+  },
+  {
+    "name": "NFT #26",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Purple 1"},
+      {"trait_type":"Skin", "value":"Purple Tooth Skull 4"}
+    ]
+  },
+  {
+    "name": "NFT #28",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Black 1"},
+      {"trait_type":"Skin", "value":"Green Tooth Skull 5"}
+    ]
+  },
+  {
+    "name": "NFT #35",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Green 8"},
+      {"trait_type":"Skin", "value":"Purple Tooth Skull 6"}
+    ]
+  },
+  {
+    "name": "NFT #47",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Purple 1"},
+      {"trait_type":"Skin", "value":"Purple Tooth Skull 6"},
+      {"trait_type":"Mouth", "value":"Purple Tooth 3"}
+    ]
+  },
+  {
+    "name": "NFT #59",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Blue 3"},
+      {"trait_type":"Skin", "value":"Purple Tooth Skull 1"},
+      {"trait_type":"Mouth", "value":"Red Tooth 1"}
+    ]
+  },
+  {
+    "name": "NFT #63",
+    "attributes": [
+      {"trait_type":"Skin", "value":"Yellow Tooth Skull 1"},
+      {"trait_type":"Mouth", "value":"Red Tooth 1"}
+    ]
+  },
+  {
+    "name": "NFT #71",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Blue 3"},
+      {"trait_type":"Skin", "value":"Purple Tooth Skull 6"},
+      {"trait_type":"Mouth", "value":"Purple Tooth 4"}
+    ]
+  },
+  {
+    "name": "NFT #78",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Red 4"},
+      {"trait_type":"Skin", "value":"Green Tooth Skull 9"},
+      {"trait_type":"Mouth", "value":"Yellow Tooth 1"}
+    ]
+  },
+  {
+    "name": "NFT #80",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Blue 3"},
+      {"trait_type":"Skin", "value":"Yellow Tooth Skull 1"},
+      {"trait_type":"Mouth", "value":"Red Tooth 3"}
+    ]
+  },
+  {
+    "name": "NFT #89",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Black 1"},
+      {"trait_type":"Skin", "value":"Purple Tooth Skull 8"}
+    ]
+  },
+  {
+    "name": "NFT #107",
+    "attributes": [
+      {"trait_type":"Skin", "value":"Yellow Tooth Skull 1"},
+      {"trait_type":"Mouth", "value":"Red Tooth 6"}
+    ]
+  },
+  {
+    "name": "NFT #133",
+    "attributes": [
+      {"trait_type":"Skin", "value":"Purple Tooth Skull 6"},
+      {"trait_type":"Extra", "value":"Cracked Skull 3"},
+      {"trait_type":"Mouth", "value":"Red Tooth 2"}
+    ]
+  },
+  {
+    "name": "NFT #139",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Green 3"},
+      {"trait_type":"Skin", "value":"Green Tooth Skull 9"},
+      {"trait_type":"Mouth", "value":"Yellow Tooth 5"}
+    ]
+  },
+  {
+    "name": "NFT #146",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Black 1"},
+      {"trait_type":"Skin", "value":"Green Tooth Skull 5"}
+    ]
+  },
+  {
+    "name": "NFT #172",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Black 1"},
+      {"trait_type":"Skin", "value":"Brown Tooth Skull 3"}
+    ]
+  },
+  {
+    "name": "NFT #182",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Purple 1"},
+      {"trait_type":"Skin", "value":"Red Tooth Skull 2"}
+    ]
+  },
+  {
+    "name": "NFT #189",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Black 1"},
+      {"trait_type":"Skin", "value":"Black Tooth Skull 2"}
+    ]
+  },
+  {
+    "name": "NFT #202",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Black 1"},
+      {"trait_type":"Skin", "value":"Brown Tooth Skull 3"}
+    ]
+  },
+  {
+    "name": "NFT #203",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Green 8"},
+      {"trait_type":"Skin", "value":"Purple Tooth Skull 1"}
+    ]
+  },
+  {
+    "name": "NFT #205",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Black 1"},
+      {"trait_type":"Skin", "value":"Black Tooth Skull 4"}
+    ]
+  },
+  {
+    "name": "NFT #260",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Blue 3"},
+      {"trait_type":"Skin", "value":"Green Tooth Skull 6"}
+    ]
+  },
+  {
+    "name": "NFT #262",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Black 1"},
+      {"trait_type":"Skin", "value":"Yellow Tooth Skull 5"},
+      {"trait_type":"Extra", "value":"Cracked Skull 3"}
+    ]
+  },
+  {
+    "name": "NFT #271",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Purple 1"},
+      {"trait_type":"Skin", "value":"Yellow Tooth Skull 1"},
+      {"trait_type":"Mouth", "value":"Red Tooth 4"}
+    ]
+  },
+  {
+    "name": "NFT #273",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Blue 3"},
+      {"trait_type":"Skin", "value":"Green Tooth Skull 9"},
+      {"trait_type":"Mouth", "value":"Purple Tooth 3"}
+    ]
+  },
+  {
+    "name": "NFT #388",
+    "description": "This NFT Id is #388",
+    "image": "ipfs://__CID__/388.png",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Red 4"},
+      {"trait_type":"Skin", "value":"Green Tooth Skull 9"},
+      {"trait_type":"Mouth", "value":"Blue Tooth 4"}
+    ]
+  },
+  {
+    "name": "NFT #404",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Purple 1"},
+      {"trait_type":"Skin", "value":"Brown Tooth Skull 3"},
+      {"trait_type":"Mouth", "value":"Yellow Tooth 1"}
+    ]
+  },
+  {
+    "name": "NFT #409",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Green 8"},
+      {"trait_type":"Mouth", "value":"Red Tooth 2"}
+    ]
+  },
+  {
+    "name": "NFT #417",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Purple 1"},
+      {"trait_type":"Skin", "value":"Purple Tooth Skull 6"}
+    ]
+  },
+  {
+    "name": "NFT #425",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Blue 3"},
+      {"trait_type":"Skin", "value":"Green Tooth Skull 2"},
+      {"trait_type":"Mouth", "value":"Red Tooth 3"}
+    ]
+  },
+  {
+    "name": "NFT #430",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Red 1"},
+      {"trait_type":"Skin", "value":"Purple Tooth Skull 1"}
+    ]
+  },
+  {
+    "name": "NFT #433",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Purple 1"},
+      {"trait_type":"Skin", "value":"Green Tooth Skull 9"},
+      {"trait_type":"Extra", "value":"Cracked Skull 2"},
+      {"trait_type":"Mouth", "value":"Brown Tooth 1"}
+    ]
+  },
+  {
+    "name": "NFT #434",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Blue 3"},
+      {"trait_type":"Skin", "value":"Green Tooth Skull 7"}
+    ]
+  },
+  {
+    "name": "NFT #438",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Red 4"},
+      {"trait_type":"Skin", "value":"Green Tooth Skull 9"}
+    ]
+  },
+  {
+    "name": "NFT #455",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Blue 3"},
+      {"trait_type":"Skin", "value":"Purple Tooth Skull 6"}
+    ]
+  },
+  {
+    "name": "NFT #520",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Purple 1"},
+      {"trait_type":"Skin", "value":"Yellow Tooth Skull 5"}
+    ]
+  },
+  {
+    "name": "NFT #564",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Red 1"},
+      {"trait_type":"Skin", "value":"Green Tooth Skull 7"}
+    ]
+  },
+  {
+    "name": "NFT #566",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Purple 1"},
+      {"trait_type":"Skin", "value":"Yellow Tooth Skull 1"}
+    ]
+  },
+  {
+    "name": "NFT #567",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Blue 3"},
+      {"trait_type":"Skin", "value":"Green Tooth Skull 7"}
+    ]
+  },
+  {
+    "name": "NFT #568",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Red 4"},
+      {"trait_type":"Skin", "value":"Green Tooth Skull 9"}
+    ]
+  },
+  {
+    "name": "NFT #619",
+    "attributes": [
+      {"trait_type":"Skin", "value":"Yellow Tooth Skull 5"},
+      {"trait_type":"Mouth", "value":"Red Tooth 1"}
+    ]
+  },
+  {
+    "name": "NFT #627",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Black 1"},
+      {"trait_type":"Skin", "value":"Green Tooth Skull 7"}
+    ]
+  },
+  {
+    "name": "NFT #641",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Purple 1"},
+      {"trait_type":"Skin", "value":"Yellow Tooth Skull 1"}
+    ]
+  },
+  {
+    "name": "NFT #647",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Brown 2"},
+      {"trait_type":"Skin", "value":"Green Tooth Skull 9"}
+    ]
+  },
+  {
+    "name": "NFT #657",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Black 1"},
+      {"trait_type":"Skin", "value":"Brown Tooth Skull 3"}
+    ]
+  },
+  {
+    "name": "NFT #664",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Blue 2"},
+      {"trait_type":"Skin", "value":"Green Tooth Skull 9"},
+      {"trait_type":"Mouth", "value":"Purple Tooth 3"}
+    ]
+  },
+  {
+    "name": "NFT #696",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Purple 1"},
+      {"trait_type":"Skin", "value":"Yellow Tooth Skull 1"}
+    ]
+  },
+  {
+    "name": "NFT #697",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Blue 3"},
+      {"trait_type":"Skin", "value":"Green Tooth Skull 2"}
+    ]
+  },
+  {
+    "name": "NFT #700",
+    "attributes": [
+      {"trait_type":"Skin", "value":"Green Tooth Skull 9"},
+      {"trait_type":"Mouth", "value":"Red Tooth 1"}
+    ]
+  },
+  {
+    "name": "NFT #701",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Purple 1"},
+      {"trait_type":"Skin", "value":"Green Tooth Skull 2"}
+    ]
+  },
+  {
+    "name": "NFT #709",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Purple 1"},
+      {"trait_type":"Skin", "value":"Red Tooth Skull 3"}
+    ]
+  },
+  {
+    "name": "NFT #715",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Black 1"},
+      {"trait_type":"Skin", "value":"Black Tooth Skull 1"}
+    ]
+  },
+  {
+    "name": "NFT #726",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Purple 1"},
+      {"trait_type":"Skin", "value":"Yellow Tooth Skull 6"}
+    ]
+  },
+  {
+    "name": "NFT #735",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Black 1"},
+      {"trait_type":"Skin", "value":"Red Tooth Skull 1"}
+    ]
+  },
+  {
+    "name": "NFT #746",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Green 8"},
+      {"trait_type":"Skin", "value":"Purple Tooth Skull 6"}
+    ]
+  },
+  {
+    "name": "NFT #748",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Yellow 7"},
+      {"trait_type":"Skin", "value":"Green Tooth Skull 9"}
+    ]
+  },
+  {
+    "name": "NFT #755",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Purple 1"},
+      {"trait_type":"Skin", "value":"Black Tooth Skull 6"}
+    ]
+  },
+  {
+    "name": "NFT #759",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Purple 1"},
+      {"trait_type":"Skin", "value":"Green Tooth Skull 6"}
+    ]
+  },
+  {
+    "name": "NFT #777",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Black 1"},
+      {"trait_type":"Skin", "value":"Black Tooth Skull 1"}
+    ]
+  },
+  {
+    "name": "NFT #784",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Purple 1"},
+      {"trait_type":"Skin", "value":"Green Tooth Skull 8"}
+    ]
+  },
+  {
+    "name": "NFT #797",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Red 1"},
+      {"trait_type":"Skin", "value":"Purple Tooth Skull 1"}
+    ]
+  },
+  {
+    "name": "NFT #801",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Purple 1"},
+      {"trait_type":"Skin", "value":"Green Tooth Skull 6"}
+    ]
+  },
+  {
+    "name": "NFT #859",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Red 1"},
+      {"trait_type":"Skin", "value":"Purple Tooth Skull 1"}
+    ]
+  },
+  {
+    "name": "NFT #884",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Green 1"},
+      {"trait_type":"Skin", "value":"Green Tooth Skull 9"}
+    ]
+  },
+  {
+    "name": "NFT #894",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Red 4"},
+      {"trait_type":"Skin", "value":"Green Tooth Skull 9"}
+    ]
+  },
+  {
+    "name": "NFT #898",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Green 8"},
+      {"trait_type":"Skin", "value":"Green Tooth Skull 6"}
+    ]
+  },
+  {
+    "name": "NFT #901",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Purple 1"},
+      {"trait_type":"Skin", "value":"Red Tooth Skull 2"}
+    ]
+  },
+  {
+    "name": "NFT #914",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Blue 3"},
+      {"trait_type":"Skin", "value":"Red Tooth Skull 2"}
+    ]
+  },
+  {
+    "name": "NFT #929",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Black 1"},
+      {"trait_type":"Skin", "value":"Black Tooth Skull 3"},
+      {"trait_type":"Extra", "value":"Cracked Skull 3"},
+      {"trait_type":"Mouth", "value":"Blue Tooth 9"}
+    ]
+  },
+  {
+    "name": "NFT #935",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Red 4"},
+      {"trait_type":"Skin", "value":"Green Tooth Skull 9"}
+    ]
+  },
+  {
+    "name": "NFT #945",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Black 1"},
+      {"trait_type":"Skin", "value":"Yellow Tooth Skull 6"}
+    ]
+  },
+  {
+    "name": "NFT #974",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Blue 3"},
+      {"trait_type":"Skin", "value":"Black Tooth Skull 6"}
+    ]
+  },
+  {
+    "name": "NFT #996",
+    "attributes": [
+      {"trait_type":"SkinBase", "value":"Red 2"},
+      {"trait_type":"Skin", "value":"Green Tooth Skull 9"}
+    ]
+  }
+]
