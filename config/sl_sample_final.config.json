@@ -1,0 +1,1568 @@
+{
+  "name": "newly generated",
+  "layers": [
+    {
+      "name": "Background",
+      "traits": [
+        {
+          "name": "Black Broken Glass",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\1_Background\\Black Broken Glass_100.png"
+          ]
+        },
+        {
+          "name": "Blocks",
+          "weight": 50,
+          "sources": [
+            ".\\input\\sl_layers\\1_Background\\Blocks_50.png"
+          ]
+        },
+        {
+          "name": "Cliffs Neon",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\1_Background\\Cliffs Neon_25.png"
+          ]
+        },
+        {
+          "name": "Cliffs",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\1_Background\\Cliffs_25.png"
+          ]
+        },
+        {
+          "name": "Field",
+          "weight": 75,
+          "sources": [
+            ".\\input\\sl_layers\\1_Background\\Field_75.png"
+          ]
+        },
+        {
+          "name": "Light Blocks",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\1_Background\\Light Blocks_100.png"
+          ]
+        },
+        {
+          "name": "Orange",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\1_Background\\Orange.png"
+          ]
+        },
+        {
+          "name": "Pathway Sky",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\1_Background\\Pathway Sky_100.png"
+          ]
+        },
+        {
+          "name": "Pathway Disoriented",
+          "weight": 50,
+          "sources": [
+            ".\\input\\sl_layers\\1_Background\\Pathway Disoriented_50.png"
+          ]
+        },
+        {
+          "name": "Pathway",
+          "weight": 50,
+          "sources": [
+            ".\\input\\sl_layers\\1_Background\\Pathway_50.png"
+          ]
+        },
+        {
+          "name": "Structure",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\1_Background\\Structure_1.png"
+          ]
+        },
+        {
+          "name": "Top Blocks",
+          "weight": 75,
+          "sources": [
+            ".\\input\\sl_layers\\1_Background\\Top Blocks_75.png"
+          ]
+        },
+        {
+          "name": "Tunnel",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\1_Background\\Tunnel_100.png"
+          ]
+        },
+        {
+          "name": "Waves",
+          "weight": 75,
+          "sources": [
+            ".\\input\\sl_layers\\1_Background\\Waves_75.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SkinBase",
+      "traits": [
+        {
+          "name": "Black 1",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\2_SkinBase\\Black 1_25.png"
+          ]
+        },
+        {
+          "name": "Black Dots On White",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\2_SkinBase\\Black Dots On White_1.png"
+          ]
+        },
+        {
+          "name": "Blue 1",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\2_SkinBase\\Blue 1_100.png"
+          ]
+        },
+        {
+          "name": "Blue 2",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\2_SkinBase\\Blue 2_25.png"
+          ]
+        },
+        {
+          "name": "Blue 3",
+          "weight": 75,
+          "sources": [
+            ".\\input\\sl_layers\\2_SkinBase\\Blue 3_75.png"
+          ]
+        },
+        {
+          "name": "Brown 1",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\2_SkinBase\\Brown 1_100.png"
+          ]
+        },
+        {
+          "name": "Brown 2",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\2_SkinBase\\Brown 2_100.png"
+          ]
+        },
+        {
+          "name": "Candy",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\2_SkinBase\\Candy_1.png"
+          ]
+        },
+        {
+          "name": "Coffee",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\2_SkinBase\\Coffee_25.png"
+          ]
+        },
+        {
+          "name": "Green 1",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\2_SkinBase\\Green 1_100.png"
+          ]
+        },
+        {
+          "name": "Green 3",
+          "weight": 75,
+          "sources": [
+            ".\\input\\sl_layers\\2_SkinBase\\Green 3_75.png"
+          ]
+        },
+        {
+          "name": "Green 4",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\2_SkinBase\\Green 4_25.png"
+          ]
+        },
+        {
+          "name": "Green 7",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\2_SkinBase\\Green 7_1.png"
+          ]
+        },
+        {
+          "name": "Green 8",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\2_SkinBase\\Green 8_100.png"
+          ]
+        },
+        {
+          "name": "Purple 1",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\2_SkinBase\\Purple 1_100.png"
+          ]
+        },
+        {
+          "name": "Purple 2",
+          "weight": 75,
+          "sources": [
+            ".\\input\\sl_layers\\2_SkinBase\\Purple 2_75.png"
+          ]
+        },
+        {
+          "name": "Purple 3",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\2_SkinBase\\Purple 3_100.png"
+          ]
+        },
+        {
+          "name": "Purple 4",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\2_SkinBase\\Purple 4_100.png"
+          ]
+        },
+        {
+          "name": "Red 1",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\2_SkinBase\\Red 1_25.png"
+          ]
+        },
+        {
+          "name": "Red 2",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\2_SkinBase\\Red 2_100.png"
+          ]
+        },
+        {
+          "name": "Red 4",
+          "weight": 75,
+          "sources": [
+            ".\\input\\sl_layers\\2_SkinBase\\Red 4_75.png"
+          ]
+        },
+        {
+          "name": "Red 6",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\2_SkinBase\\Red 6_100.png"
+          ]
+        },
+        {
+          "name": "White 1",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\2_SkinBase\\White 1_1.png"
+          ]
+        },
+        {
+          "name": "Yellow 1",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\2_SkinBase\\Yellow 1_100.png"
+          ]
+        },
+        {
+          "name": "Yellow 6",
+          "weight": 75,
+          "sources": [
+            ".\\input\\sl_layers\\2_SkinBase\\Yellow 6_75.png"
+          ]
+        },
+        {
+          "name": "Yellow 7",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\2_SkinBase\\Yellow 7_25.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Skin",
+      "traits": [
+        {
+          "name": "Black Skull 1",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\3_Skin\\Black Skull 1_1.png"
+          ]
+        },
+        {
+          "name": "Black Skull 2",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\3_Skin\\Black Skull 2_100.png"
+          ]
+        },
+        {
+          "name": "Black Skull 3",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\3_Skin\\Black Skull 3_1.png"
+          ]
+        },
+        {
+          "name": "Black Skull 4",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\3_Skin\\Black Skull 4_25.png"
+          ]
+        },
+        {
+          "name": "Black Skull 5",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\3_Skin\\Black Skull 5_1.png"
+          ]
+        },
+        {
+          "name": "Blue Skull 2",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\3_Skin\\Blue Skull 2_100.png"
+          ]
+        },
+        {
+          "name": "Brown Skull 1",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\3_Skin\\Brown Skull 1_100.png"
+          ]
+        },
+        {
+          "name": "Brown Skull 2",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\3_Skin\\Brown Skull 2_100.png"
+          ]
+        },
+        {
+          "name": "Brown Skull 3",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\3_Skin\\Brown Skull 3_100.png"
+          ]
+        },
+        {
+          "name": "Brown Skull 4",
+          "weight": 75,
+          "sources": [
+            ".\\input\\sl_layers\\3_Skin\\Brown Skull 4_75.png"
+          ]
+        },
+        {
+          "name": "Green Skull 1",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\3_Skin\\Green Skull 1_25.png"
+          ]
+        },
+        {
+          "name": "Green Skull 10",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\3_Skin\\Green Skull 10_100.png"
+          ]
+        },
+        {
+          "name": "Green Skull 2",
+          "weight": 75,
+          "sources": [
+            ".\\input\\sl_layers\\3_Skin\\Green Skull 2_75.png"
+          ]
+        },
+        {
+          "name": "Green Skull 3",
+          "weight": 75,
+          "sources": [
+            ".\\input\\sl_layers\\3_Skin\\Green Skull 3_75.png"
+          ]
+        },
+        {
+          "name": "Green Skull 4",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\3_Skin\\Green Skull 4_25.png"
+          ]
+        },
+        {
+          "name": "Green Skull 5",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\3_Skin\\Green Skull 5_100.png"
+          ]
+        },
+        {
+          "name": "Green Skull 6",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\3_Skin\\Green Skull 6_1.png"
+          ]
+        },
+        {
+          "name": "Green Skull 8",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\3_Skin\\Green Skull 8_100.png"
+          ]
+        },
+        {
+          "name": "Orange Skull 1",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\3_Skin\\Orange Skull 1_1.png"
+          ]
+        },
+        {
+          "name": "Orange Skull 2",
+          "weight": 75,
+          "sources": [
+            ".\\input\\sl_layers\\3_Skin\\Orange Skull 2_75.png"
+          ]
+        },
+        {
+          "name": "Pink Skull 1",
+          "weight": 75,
+          "sources": [
+            ".\\input\\sl_layers\\3_Skin\\Pink Skull 1_75.png"
+          ]
+        },
+        {
+          "name": "Purple Skull 1",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\3_Skin\\Purple Skull 1_25.png"
+          ]
+        },
+        {
+          "name": "Purple Skull 2",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\3_Skin\\Purple Skull 2_100.png"
+          ]
+        },
+        {
+          "name": "Purple Skull 3",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\3_Skin\\Purple Skull 3_100.png"
+          ]
+        },
+        {
+          "name": "Purple Skull 4",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\3_Skin\\Purple Skull 4_25.png"
+          ]
+        },
+        {
+          "name": "Purple Skull 5",
+          "weight": 75,
+          "sources": [
+            ".\\input\\sl_layers\\3_Skin\\Purple Skull 5_75.png"
+          ]
+        },
+        {
+          "name": "Purple Skull 6",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\3_Skin\\Purple Skull 6_25.png"
+          ]
+        },
+        {
+          "name": "Purple Skull 7",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\3_Skin\\Purple Skull 7_25.png"
+          ]
+        },
+        {
+          "name": "Red Skull 1",
+          "weight": 75,
+          "sources": [
+            ".\\input\\sl_layers\\3_Skin\\Red Skull 1_75.png"
+          ]
+        },
+        {
+          "name": "Red Skull 2",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\3_Skin\\Red Skull 2_100.png"
+          ]
+        },
+        {
+          "name": "Red Skull 3",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\3_Skin\\Red Skull 3_25.png"
+          ]
+        },
+        {
+          "name": "Yellow Skull 2",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\3_Skin\\Yellow Skull 2_100.png"
+          ]
+        },
+
+        {
+          "name": "Black Tooth Skull 1",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\3_Skin\\Black Tooth Skull 1_1.png"
+          ]
+        },
+        {
+          "name": "Black Tooth Skull 2",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\3_Skin\\Black Tooth Skull 2_1.png"
+          ]
+        },
+        {
+          "name": "Black Tooth Skull 3",
+          "weight": 50,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\3_Skin\\Black Tooth Skull 3_50.png"
+          ]
+        },
+        {
+          "name": "Black Tooth Skull 4",
+          "weight": 50,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\3_Skin\\Black Tooth Skull 4_50.png"
+          ]
+        },
+        {
+          "name": "Black Tooth Skull 5",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\3_Skin\\Black Tooth Skull 5_1.png"
+          ]
+        },
+        {
+          "name": "Black Tooth Skull 6",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\3_Skin\\Black Tooth Skull 6_100.png"
+          ]
+        },
+        {
+          "name": "Blue Tooth Skull 2",
+          "weight": 50,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\3_Skin\\Blue Tooth Skull 2_50.png"
+          ]
+        },
+        {
+          "name": "Brown Tooth Skull 1",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\3_Skin\\Brown Tooth Skull 1_25.png"
+          ]
+        },
+        {
+          "name": "Brown Tooth Skull 2",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\3_Skin\\Brown Tooth Skull 2_25.png"
+          ]
+        },
+        {
+          "name": "Brown Tooth Skull 3",
+          "weight": 50,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\3_Skin\\Brown Tooth Skull 3_50.png"
+          ]
+        },
+        {
+          "name": "Brown Tooth Skull 4",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\3_Skin\\Brown Tooth Skull 4_100.png"
+          ]
+        },
+        {
+          "name": "Green Tooth Skull 2",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\3_Skin\\Green Tooth Skull 2_1.png"
+          ]
+        },
+        {
+          "name": "Green Tooth Skull 3",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\3_Skin\\Green Tooth Skull 3_25.png"
+          ]
+        },
+        {
+          "name": "Green Tooth Skull 4",
+          "weight": 75,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\3_Skin\\Green Tooth Skull 4_75.png"
+          ]
+        },
+        {
+          "name": "Green Tooth Skull 5",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\3_Skin\\Green Tooth Skull 5_25.png"
+          ]
+        },
+        {
+          "name": "Green Tooth Skull 6",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\3_Skin\\Green Tooth Skull 6_100.png"
+          ]
+        },
+        {
+          "name": "Green Tooth Skull 7",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\3_Skin\\Green Tooth Skull 7_100.png"
+          ]
+        },
+        {
+          "name": "Green Tooth Skull 8",
+          "weight": 75,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\3_Skin\\Green Tooth Skull 8_75.png"
+          ]
+        },
+        {
+          "name": "Green Tooth Skull 9",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\3_Skin\\Green Tooth Skull 9_1.png"
+          ]
+        },
+        {
+          "name": "Purple Tooth Skull 1",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\3_Skin\\Purple Tooth Skull 1_1.png"
+          ]
+        },
+        {
+          "name": "Purple Tooth Skull 2",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\3_Skin\\Purple Tooth Skull 2_1.png"
+          ]
+        },
+        {
+          "name": "Purple Tooth Skull 3",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\3_Skin\\Purple Tooth Skull 3_25.png"
+          ]
+        },
+        {
+          "name": "Purple Tooth Skull 4",
+          "weight": 50,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\3_Skin\\Purple Tooth Skull 4_50.png"
+          ]
+        },
+        {
+          "name": "Purple Tooth Skull 5",
+          "weight": 50,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\3_Skin\\Purple Tooth Skull 5_50.png"
+          ]
+        },
+        {
+          "name": "Purple Tooth Skull 6",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\3_Skin\\Purple Tooth Skull 6_100.png"
+          ]
+        },
+        {
+          "name": "Purple Tooth Skull 8",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\3_Skin\\Purple Tooth Skull 8_100.png"
+          ]
+        },
+        {
+          "name": "Red Tooth Skull 1",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\3_Skin\\Red Tooth Skull 1_100.png"
+          ]
+        },
+        {
+          "name": "Red Tooth Skull 2",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\3_Skin\\Red Tooth Skull 2_1.png"
+          ]
+        },
+        {
+          "name": "Red Tooth Skull 3",
+          "weight": 50,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\3_Skin\\Red Tooth Skull 3_50.png"
+          ]
+        },
+        {
+          "name": "Yellow Tooth Skull 1",
+          "weight": 50,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\3_Skin\\Yellow Tooth Skull 1_50.png"
+          ]
+        },
+        {
+          "name": "Yellow Tooth Skull 5",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\3_Skin\\Yellow Tooth Skull 5_100.png"
+          ]
+        },
+        {
+          "name": "Yellow Tooth Skull 6",
+          "weight": 50,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\3_Skin\\Yellow Tooth Skull 6_50.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mouth",
+      "traits": [
+        {
+          "name": "Black Blood Lips",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\4_Mouth\\Black Blood Lips_1.png"
+          ]
+        },
+        {
+          "name": "Blue Lips",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\4_Mouth\\Blue Lips_1.png"
+          ]
+        },
+        {
+          "name": "Decay",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\4_Mouth\\Decay_25.png"
+          ]
+        },
+        {
+          "name": "Dull Red Blood Lips",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\4_Mouth\\Dull Red Blood Lips_25.png"
+          ]
+        },
+        {
+          "name": "Eye",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\4_Mouth\\Eye_25.png"
+          ]
+        },
+        {
+          "name": "Green Lips",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\4_Mouth\\Green Lips_25.png"
+          ]
+        },
+        {
+          "name": "Hungry Bloody",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\4_Mouth\\Hungry Bloody_100.png"
+          ]
+        },
+        {
+          "name": "Hungry Red Mouth",
+          "weight": 75,
+          "sources": [
+            ".\\input\\sl_layers\\4_Mouth\\Hungry Red Mouth_75.png"
+          ]
+        },
+        {
+          "name": "Hungry",
+          "weight": 75,
+          "sources": [
+            ".\\input\\sl_layers\\4_Mouth\\Hungry_75.png"
+          ]
+        },
+        {
+          "name": "Light Red Blood Lips",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\4_Mouth\\Light Red Blood Lips_100.png"
+          ]
+        },
+        {
+          "name": "Monster",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\4_Mouth\\Monster_25.png"
+          ]
+        },
+        {
+          "name": "Red Lips",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\4_Mouth\\Red Lips_1.png"
+          ]
+        },
+        {
+          "name": "Tongue Out",
+          "weight": 75,
+          "sources": [
+            ".\\input\\sl_layers\\4_Mouth\\Tongue Out_75.png"
+          ]
+        },
+        {
+          "name": "Vampire",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\4_Mouth\\Vampire_100.png"
+          ]
+        },
+
+
+        {
+          "name": "Blue Tooth 1",
+          "weight": 75,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\4_Mouth\\Blue Tooth 1_75.png"
+          ]
+        },
+        {
+          "name": "Blue Tooth 2",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\4_Mouth\\Blue Tooth 2_1.png"
+          ]
+        },
+        {
+          "name": "Blue Tooth 3",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\4_Mouth\\Blue Tooth 3_25.png"
+          ]
+        },
+        {
+          "name": "Blue Tooth 4",
+          "weight": 50,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\4_Mouth\\Blue Tooth 4_50.png"
+          ]
+        },
+        {
+          "name": "Blue Tooth 5",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\4_Mouth\\Blue Tooth 5_25.png"
+          ]
+        },
+        {
+          "name": "Blue Tooth 6",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\4_Mouth\\Blue Tooth 6_1.png"
+          ]
+        },
+        {
+          "name": "Blue Tooth 7",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\4_Mouth\\Blue Tooth 7_1.png"
+          ]
+        },
+        {
+          "name": "Blue Tooth 8",
+          "weight": 50,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\4_Mouth\\Blue Tooth 8_50.png"
+          ]
+        },
+        {
+          "name": "Blue Tooth 9",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\4_Mouth\\Blue Tooth 9_25.png"
+          ]
+        },
+        {
+          "name": "Brown Tooth 1",
+          "weight": 75,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\4_Mouth\\Brown Tooth 1_75.png"
+          ]
+        },
+        {
+          "name": "Brown Tooth 2",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\4_Mouth\\Brown Tooth 2_25.png"
+          ]
+        },
+        {
+          "name": "Brown Tooth 3",
+          "weight": 50,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\4_Mouth\\Brown Tooth 3_50.png"
+          ]
+        },
+        {
+          "name": "Brown Tooth 4",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\4_Mouth\\Brown Tooth 4_25.png"
+          ]
+        },
+        {
+          "name": "Brown Tooth 5",
+          "weight": 75,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\4_Mouth\\Brown Tooth 5_75.png"
+          ]
+        },
+        {
+          "name": "Brown Tooth 6",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\4_Mouth\\Brown Tooth 6_1.png"
+          ]
+        },
+        {
+          "name": "Green Tooth 1",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\4_Mouth\\Green Tooth 1_25.png"
+          ]
+        },
+        {
+          "name": "Green Tooth 2",
+          "weight": 50,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\4_Mouth\\Green Tooth 2_50.png"
+          ]
+        },
+        {
+          "name": "Green Tooth 3",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\4_Mouth\\Green Tooth 3_1.png"
+          ]
+        },
+        {
+          "name": "Green Tooth 4",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\4_Mouth\\Green Tooth 4_1.png"
+          ]
+        },
+        {
+          "name": "Green Tooth 5",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\4_Mouth\\Green Tooth 5_1.png"
+          ]
+        },
+        {
+          "name": "Pink Tooth 1",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\4_Mouth\\Pink Tooth 1_100.png"
+          ]
+        },
+        {
+          "name": "Purple Tooth 1",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\4_Mouth\\Purple Tooth 1_100.png"
+          ]
+        },
+        {
+          "name": "Purple Tooth 2",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\4_Mouth\\Purple Tooth 2_100.png"
+          ]
+        },
+        {
+          "name": "Purple Tooth 3",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\4_Mouth\\Purple Tooth 3_100.png"
+          ]
+        },
+        {
+          "name": "Purple Tooth 4",
+          "weight": 75,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\4_Mouth\\Purple Tooth 4_75.png"
+          ]
+        },
+        {
+          "name": "Red Tooth 1",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\4_Mouth\\Red Tooth 1_100.png"
+          ]
+        },
+        {
+          "name": "Red Tooth 2",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\4_Mouth\\Red Tooth 2_1.png"
+          ]
+        },
+        {
+          "name": "Red Tooth 3",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\4_Mouth\\Red Tooth 3_25.png"
+          ]
+        },
+        {
+          "name": "Red Tooth 4",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\4_Mouth\\Red Tooth 4_25.png"
+          ]
+        },
+        {
+          "name": "Red Tooth 5",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\4_Mouth\\Red Tooth 5_1.png"
+          ]
+        },
+        {
+          "name": "Red Tooth 6",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\4_Mouth\\Red Tooth 6_25.png"
+          ]
+        },
+        {
+          "name": "White Tooth 1",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\4_Mouth\\White Tooth 1_1.png"
+          ]
+        },
+        {
+          "name": "Yellow Tooth 1",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\4_Mouth\\Yellow Tooth 1_1.png"
+          ]
+        },
+        {
+          "name": "Yellow Tooth 2",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\4_Mouth\\Yellow Tooth 2_1.png"
+          ]
+        },
+        {
+          "name": "Yellow Tooth 3",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\4_Mouth\\Yellow Tooth 3_25.png"
+          ]
+        },
+        {
+          "name": "Yellow Tooth 4",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\4_Mouth\\Yellow Tooth 4_25.png"
+          ]
+        },
+        {
+          "name": "Yellow Tooth 5",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\4_Mouth\\Yellow Tooth 5_1.png"
+          ]
+        },
+        {
+          "name": "Yellow Tooth 6",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\4_Mouth\\Yellow Tooth 6_25.png"
+          ]
+        },
+        {
+          "name": "Yellow Tooth 7",
+          "weight": 50,
+          "sources": [
+            ".\\input\\sl_layers\\with_teeth_layers\\4_Mouth\\Yellow Tooth 7_50.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Eyes",
+      "traits": [
+        {
+          "name": "Angry Eyes Normal",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\5_Eyes\\Angry Eyes Normal_100.png"
+          ]
+        },
+        {
+          "name": "Angry Eyes",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\5_Eyes\\Angry Eyes_100.png"
+          ]
+        },
+        {
+          "name": "Black Glasses",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\5_Eyes\\Black Glasses_1.png"
+          ]
+        },
+        {
+          "name": "Blue Eyes Darker",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\5_Eyes\\Blue Eyes Darker_25.png"
+          ]
+        },
+        {
+          "name": "Blue Eyes",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\5_Eyes\\Blue Eyes_25.png"
+          ]
+        },
+        {
+          "name": "Blue Pink Glasses",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\5_Eyes\\Blue Pink Glasses_100.png"
+          ]
+        },
+        {
+          "name": "Blue Red Glasses",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\5_Eyes\\Blue Red Glasses_100.png"
+          ]
+        },
+        {
+          "name": "Fashion Glasses",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\5_Eyes\\Fashion Glasses_25.png"
+          ]
+        },
+        {
+          "name": "Green Eyes",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\5_Eyes\\Green Eyes_1.png"
+          ]
+        },
+        {
+          "name": "Green Eyes Circular",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\5_Eyes\\Green Eyes Circular_25.png"
+          ]
+        },
+        {
+          "name": "Green Eyes Normal",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\5_Eyes\\Green Eyes Normal_1.png"
+          ]
+        },
+        {
+          "name": "Green Glasses",
+          "weight": 75,
+          "sources": [
+            ".\\input\\sl_layers\\5_Eyes\\Green Glasses_75.png"
+          ]
+        },
+        {
+          "name": "Heart Glasses",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\5_Eyes\\Heart Glasses_1.png"
+          ]
+        },
+        {
+          "name": "Normal Eyes",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\5_Eyes\\Normal Eyes_1.png"
+          ]
+        },
+        {
+          "name": "Pixel Blue Glasses",
+          "weight": 75,
+          "sources": [
+            ".\\input\\sl_layers\\5_Eyes\\Pixel Blue Glasses_75.png"
+          ]
+        },
+        {
+          "name": "Rage Eyes",
+          "weight": 75,
+          "sources": [
+            ".\\input\\sl_layers\\5_Eyes\\Rage Eyes_75.png"
+          ]
+        },
+        {
+          "name": "Red Eyes Normal",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\5_Eyes\\Red Eyes Normal_1.png"
+          ]
+        },
+        {
+          "name": "Red Eyes Ill",
+          "weight": 75,
+          "sources": [
+            ".\\input\\sl_layers\\5_Eyes\\Red Eyes Ill_75.png"
+          ]
+        },
+        {
+          "name": "Red Eyes",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\5_Eyes\\Red Eyes_25.png"
+          ]
+        },
+        {
+          "name": "Orange Eyes",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\5_Eyes\\Orange Eyes_100.png"
+          ]
+        },
+        {
+          "name": "Yellow Eyes",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\5_Eyes\\Yellow Eyes_25.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Extra",
+      "traits": [
+        {
+          "name": "Bat Wings",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\6_Extra\\Bat Wings_25.png"
+          ]
+        },
+        {
+          "name": "Bat Wings Plain",
+          "weight": 75,
+          "sources": [
+            ".\\input\\sl_layers\\6_Extra\\Bat Wings Plain_75.png"
+          ]
+        },
+        {
+          "name": "Bat Wings with Cracked Skull",
+          "weight": 75,
+          "sources": [
+            ".\\input\\sl_layers\\6_Extra\\Bat Wings with Cracked Skull__75.png",
+            ".\\input\\sl_layers\\6_Extra\\Bat Wings with Cracked Skull_75.png"
+          ]
+        },
+        {
+          "name": "Bat Wings With Hair",
+          "weight": 75,
+          "sources": [
+            ".\\input\\sl_layers\\6_Extra\\Bat Wings With Hair__75.png",
+            ".\\input\\sl_layers\\6_Extra\\Bat Wings With Hair_75.png"
+          ]
+        },
+        {
+          "name": "Black Bat Wings With Hair",
+          "weight": 75,
+          "sources": [
+            ".\\input\\sl_layers\\6_Extra\\Black Bat Wings With Hair__75.png",
+            ".\\input\\sl_layers\\6_Extra\\Black Bat Wings With Hair_75.png"
+          ]
+        },
+        {
+          "name": "Black Glasses With Hair",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\6_Extra\\Black Glasses With Hair_1.png"
+          ]
+        },
+        {
+          "name": "Black Hair",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\6_Extra\\Black Hair_25.png"
+          ]
+        },
+        {
+          "name": "Red Cap",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\6_Extra\\Red Cap_1.png"
+          ]
+        },
+        {
+          "name": "Blue Cap",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\6_Extra\\Blue Cap_25.png"
+          ]
+        },
+        {
+          "name": "Orange Cap",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\6_Extra\\Orange Cap_1.png"
+          ]
+        },
+        {
+          "name": "Cap",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\6_Extra\\Cap_1.png"
+          ]
+        },
+        {
+          "name": "Cat Ears",
+          "weight": 75,
+          "sources": [
+            ".\\input\\sl_layers\\6_Extra\\Cat Ears_75.png"
+          ]
+        },
+        {
+          "name": "Cold Cap",
+          "weight": 75,
+          "sources": [
+            ".\\input\\sl_layers\\6_Extra\\Cold Cap_75.png"
+          ]
+        },
+        {
+          "name": "Cool Cap",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\6_Extra\\Cool Cap_100.png"
+          ]
+        },
+        {
+          "name": "Cow Boy Hat",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\6_Extra\\Cow Boy Hat_25.png"
+          ]
+        },
+        {
+          "name": "Cracked Skull",
+          "weight": 75,
+          "sources": [
+            ".\\input\\sl_layers\\6_Extra\\Cracked Skull_75.png"
+          ]
+        },
+        {
+          "name": "Cracked Skull Extreme Dark",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\6_Extra\\Cracked Skull Extreme Dark_25.png"
+          ]
+        },
+        {
+          "name": "Cracked Skull Extreme",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\6_Extra\\Cracked Skull Extreme_25.png"
+          ]
+        },
+        {
+          "name": "Eagle Wings",
+          "weight": 75,
+          "sources": [
+            ".\\input\\sl_layers\\6_Extra\\Eagle Wings_75.png"
+          ]
+        },
+        {
+          "name": "Earring",
+          "weight": 75,
+          "sources": [
+            ".\\input\\sl_layers\\6_Extra\\Earring_75.png"
+          ]
+        },
+        {
+          "name": "Green Earring",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\6_Extra\\Green Earring_25.png"
+          ]
+        },
+        {
+          "name": "Flames",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\6_Extra\\Flames_1.png"
+          ]
+        },
+        {
+          "name": "Flower Head",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\6_Extra\\Flower Head_1.png"
+          ]
+        },
+        {
+          "name": "Red Hat",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\6_Extra\\Red Hat_1.png"
+          ]
+        },
+        {
+          "name": "Hat",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\6_Extra\\Hat_25.png"
+          ]
+        },
+        {
+          "name": "Helmet",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\6_Extra\\Helmet_25.png"
+          ]
+        },
+        {
+          "name": "Horns Curved",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\6_Extra\\Horns Curved_1.png"
+          ]
+        },
+        {
+          "name": "Horns",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\6_Extra\\Horns_1.png"
+          ]
+        },
+        {
+          "name": "Muffler",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\6_Extra\\Muffler_1.png"
+          ]
+        },
+        {
+          "name": "Octopus Tentacle",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\6_Extra\\Octopus Tentacle_1.png"
+          ]
+        },
+        {
+          "name": "Pilot Cap",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\6_Extra\\Pilot Cap_25.png"
+          ]
+        },
+        {
+          "name": "Pilot Cap Normal",
+          "weight": 75,
+          "sources": [
+            ".\\input\\sl_layers\\6_Extra\\Pilot Cap Normal_75.png"
+          ]
+        },
+        {
+          "name": "Police Cap",
+          "weight": 75,
+          "sources": [
+            ".\\input\\sl_layers\\6_Extra\\Police Cap_75.png"
+          ]
+        },
+        {
+          "name": "Red Hair",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\6_Extra\\Red Hair_100.png"
+          ]
+        },
+        {
+          "name": "Red Wings With Hair",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\6_Extra\\Red Wings With Hair__100.png",
+            ".\\input\\sl_layers\\6_Extra\\Red Wings With Hair_100.png"
+          ]
+        },
+        {
+          "name": "Robe",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\6_Extra\\Robe_25.png"
+          ]
+        },
+        {
+          "name": "Santa Cap",
+          "weight": 25,
+          "sources": [
+            ".\\input\\sl_layers\\6_Extra\\Santa Cap_25.png"
+          ]
+        },
+        {
+          "name": "Sharp Edge Head",
+          "weight": 100,
+          "sources": [
+            ".\\input\\sl_layers\\6_Extra\\Sharp Edge Head_100.png"
+          ]
+        },
+        {
+          "name": "Snake Crown",
+          "weight": 75,
+          "sources": [
+            ".\\input\\sl_layers\\6_Extra\\Snake Crown_75.png"
+          ]
+        },
+        {
+          "name": "Snakes",
+          "weight": 1,
+          "sources": [
+            ".\\input\\sl_layers\\6_Extra\\Snakes_1.png"
+          ]
+        }
+      ]
+    }
+  ]
+}
