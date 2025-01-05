@@ -20,7 +20,7 @@ param(
     [string]$SequenceFile,
     #Output directory is where all the generated files will be stored.
     [Parameter(Mandatory=$true)]
-    [ValidateScript({(Test-Path $_) -and ((Get-ChildItem $_).Length -eq 0)}, ErrorMessage="Need an empty directory to store the output")]
+    [ValidateScript({-not (Test-Path $_)}, ErrorMessage="The output directory already exists.")]
     [string]$OutputDirectory,
     #To control over the metadatas which are generated.
     [ValidateScript({Test-Path $_}, ErrorMessage="The specified plugin module does not exist.")]
@@ -48,8 +48,15 @@ if($plugin_module_present)
     }
 }
 
-$OutputDirectory = Resolve-Path $OutputDirectory
+New-Item -Name $OutputDirectory -Type Directory
 
+if(-not $?)
+{
+    Write-Error "Failed to create output directory."
+    exit 2
+}
+
+$OutputDirectory = Resolve-Path $OutputDirectory | Select-Object -ExpandProperty Path
 #[System.Collections.Generic.Dictionary[string, int[]]]$layers_dict = Get-LayersDict -ConfigFile $ConfigFile;
 $config = ConvertFrom-Json (Get-Content $ConfigFile -Raw)
 

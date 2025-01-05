@@ -9,9 +9,9 @@
             "command": "if(Test-Path './config/sl_sample_10.seq.json') { rm ./config/sl_sample_10.seq.json }"
         },
         {
-            "label": "delete nft file (sample 10)",
+            "label": "delete nft file (Final)",
             "type": "shell",
-            "command": "rm ./output/sl_sample_10/*"
+            "command": "if(Test-Path './output/sl_sample_final') { rm -Recurse -Force  ./output/sl_sample_final }"
         },
         {
             "label": "delete seq file (sample 13)",
