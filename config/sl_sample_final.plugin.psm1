@@ -63,6 +63,8 @@ $tooth_skin_tratis = @("Black Tooth Skull 1","Black Tooth Skull 2","Black Tooth 
 "Green Tooth Skull 6","Green Tooth Skull 7","Green Tooth Skull 8","Green Tooth Skull 9","Purple Tooth Skull 1","Purple Tooth Skull 2","Purple Tooth Skull 3","Purple Tooth Skull 4", `
 "Purple Tooth Skull 5","Purple Tooth Skull 6","Purple Tooth Skull 8","Red Tooth Skull 1","Red Tooth Skull 2","Red Tooth Skull 3","Yellow Tooth Skull 1","Yellow Tooth Skull 5","Yellow Tooth Skull 6");
 
+$mouth_big_tongue_trait = "Tongue Out"
+
 $ext_layer_traits_require_no_eyes = @("Snake Crown", "Snakes", "Octopus Tentacle", "Black Glasses With Hair")
 function Confirm-Sequence
 {
@@ -76,21 +78,15 @@ function Confirm-Sequence
     #return $null to discard a sequence
     $GenSeqLen = $GeneratedSequence.Length;
     
-    $big_tongue_index = -1;
-    $back_fan_or_wings_or_muffler_index = -1;
-    $cracked_skull_or_earrings_or_long_hair_or_plants_head_index = -1;
-    $ext_layer_traits_req_no_eyes_index = -1;
-    
     $curr_seq_skin_base_name = $null;
     $curr_seq_skin_name = $null;
     $curr_seq_mouth_name = $null;
+    $curr_seq_extra_name = $null;
+    
+    $curr_seq_mouth_src_0_index = -1;
+    $curr_seq_extra_src_0_index = -1;
     for($i = 0; $i -lt $GeneratedSequence.Length; $i++)
     {
-        if($GeneratedSequence[$i].LayerIndex -eq 3 -and $GeneratedSequence[$i].TraitIndex -eq 3)
-        {
-            $big_tongue_index = $i;
-            continue;
-        }
         $layer_idx = $GeneratedSequence[$i].LayerIndex;
         $trait_idx = $GeneratedSequence[$i].TraitIndex;
         $layer_name = $LayersConfig.layers[$layer_idx].name;
@@ -107,32 +103,19 @@ function Confirm-Sequence
         if ($layer_name -eq "Mouth")
         {
             $curr_seq_mouth_name = $trait_name;
+            if($GeneratedSequence[$i].TraitSourceIndex -eq 0)
+            {
+                $curr_seq_mouth_src_0_index = $i;
+                continue;
+            }
         }
         if($layer_name -eq "Extra")
         {
-            if($trait_name  -in $back_fan_or_wings_or_muffler_traits_name)
+            $curr_seq_extra_name = $trait_name;
+            if($GeneratedSequence[$i].TraitSourceIndex -eq 0)
             {
-                if($GeneratedSequence[$i].TraitSourceIndex -eq 0)
-                {
-                    $back_fan_or_wings_or_muffler_index = $i;
-                    continue;
-                }
-            }
-            if($trait_name -in $cracked_skull_or_earrings_or_long_hair_or_plants_head_traits_name)
-            {
-                if($GeneratedSequence[$i].TraitSourceIndex -eq 0)
-                {
-                    $cracked_skull_or_earrings_or_long_hair_or_plants_head_index = $i;
-                    continue;
-                }
-            }
-            if($trait_name -in $ext_layer_traits_require_no_eyes)
-            {
-                if($GeneratedSequence[$i].TraitSourceIndex -eq 0)
-                {
-                    $ext_layer_traits_req_no_eyes_index = $i;
-                    continue;
-                }
+                $curr_seq_extra_src_0_index = $i;
+                continue;
             }
         }
     }
@@ -166,35 +149,35 @@ function Confirm-Sequence
     <#
     adjust these traits layer order because they don't follow the default one.
     #>
-    if($back_fan_or_wings_or_muffler_index -ne -1)
+    if($curr_seq_extra_name -in $back_fan_or_wings_or_muffler_traits_name)
     {
         $to_swap_idx = 1;
-        $GeneratedSequence = move_sequence -GeneratedSequence $GeneratedSequence -SourceIndex $back_fan_or_wings_or_muffler_index -DestinationIndex $to_swap_idx
+        $GeneratedSequence = move_sequence -GeneratedSequence $GeneratedSequence -SourceIndex $curr_seq_extra_src_0_index -DestinationIndex $to_swap_idx
     }
     <#
     adjust these traits layer order because they don't follow the default one.
     #>
-    if($big_tongue_index -ne -1)
+    if($curr_seq_mouth_name -eq $mouth_big_tongue_trait)
     {
-        if($back_fan_or_wings_or_muffler_index -ne -1)
+        if($curr_seq_extra_name -in $back_fan_or_wings_or_muffler_traits_name)
         {
             return $null;
         }
         $to_swap_idx = $GenSeqLen - 1;
-        swap_sequence -GeneratedSequence $GeneratedSequence -IndexOne $big_tongue_index -IndexTwo $to_swap_idx
+        swap_sequence -GeneratedSequence $GeneratedSequence -IndexOne $curr_seq_mouth_src_0_index -IndexTwo $to_swap_idx
     }
     <#
     adjust these traits layer order because they don't follow the default one.
     #>
-    if($cracked_skull_or_earrings_or_long_hair_or_plants_head_index -ne -1)
+    if($curr_seq_extra_name -in $cracked_skull_or_earrings_or_long_hair_or_plants_head_traits_name)
     {
-        $to_swap_idx = $cracked_skull_or_earrings_or_long_hair_or_plants_head_index - 2;
-        swap_sequence -GeneratedSequence $GeneratedSequence -IndexOne $cracked_skull_or_earrings_or_long_hair_or_plants_head_index -IndexTwo $to_swap_idx
+        $to_swap_idx = $curr_seq_extra_src_0_index - 2;
+        swap_sequence -GeneratedSequence $GeneratedSequence -IndexOne $curr_seq_extra_src_0_index -IndexTwo $to_swap_idx
     }
     <#
     remove eyes trait when snake crow trait is present because it comes with eyes already.
     #>
-    if($ext_layer_traits_req_no_eyes_index -ne -1)
+    if($curr_seq_extra_name -in $ext_layer_traits_require_no_eyes)
     {
         $GeneratedSequence = $GeneratedSequence | Where-Object { $LayersConfig.layers[$_.LayerIndex].name -ne "Eyes" }
     }
@@ -211,6 +194,19 @@ function Confirm-ERC721Metadata
 
     #confirm if the metadata is correct.
     #transform it if necessary.
+    $name = $GeneratedMetadata.name
+    $desc = $GeneratedMetadata.description
+    $image = $GeneratedMetadata.image
+    $attr = $GeneratedMetadata.attributes
+    foreach ($trait in $attr) {
+        $trait_type = $trait.trait_type
+        $trait_value = $trait.value
+        if(($trait_type -eq "Extra") -and $trait_value -in $ext_layer_traits_require_no_eyes)
+        {
+            $GeneratedMetadata.attributes = $GeneratedMetadata.attributes + [PSCustomObject]@{ trait_type = "Eyes"; value = $trait_value }
+            break;
+        }
+    }
 
     return $GeneratedMetadata;
 }

@@ -26,7 +26,9 @@ param(
     [ValidateScript({Test-Path $_}, ErrorMessage="The specified plugin module does not exist.")]
     [string]$PluginModuleFilePath,
     #Use multithreading to generate nfts and metadata, this will speedup the process but will take more system resources.
-    [switch]$Multithreaded
+    [switch]$Multithreaded,
+    #switch to generate the metadata
+    [switch]$OnlyGenerateMetadata
 )
 
 Get-Module "nftgen.commons" | Remove-Module
@@ -56,8 +58,8 @@ if(-not $?)
     exit 2
 }
 
-$OutputDirectory = Resolve-Path $OutputDirectory | Select-Object -ExpandProperty Path
-#[System.Collections.Generic.Dictionary[string, int[]]]$layers_dict = Get-LayersDict -ConfigFile $ConfigFile;
+$OutputDirectory = (Resolve-Path $OutputDirectory).Path
+
 $config = ConvertFrom-Json (Get-Content $ConfigFile -Raw)
 
 $sequences = Get-Content (Resolve-Path $SequenceFile) | ConvertFrom-Json
@@ -165,7 +167,10 @@ if($Multithreaded)
         $sequences_to_paths = Get-TraitImagesFromSequence -Sequence $seq[$_] -Config $using:config;
         $nft_output = Join-Path $using:OutputDirectory "$_.png"
         $metadata_output = Join-Path $using:OutputDirectory "$_.json"
-        Merge-TraitImages $sequences_to_paths $nft_output
+        if(-not $OnlyGenerateMetadata)
+        {
+            Merge-TraitImages $sequences_to_paths $nft_output
+        }
         $metadata = Get-ERC721Metadata -Id $_ -Sequence $seq[$_] -Config $using:config;
         
         if($using:plugin_module_present)
@@ -192,7 +197,10 @@ else
         $sequences_to_paths = Get-TraitImagesFromSequence -Sequence $seq[$_] -Config $config;
         $nft_output = Join-Path $OutputDirectory "$_.png"
         $metadata_output = Join-Path $OutputDirectory "$_.json"
-        Merge-TraitImages $sequences_to_paths $nft_output
+        if(-not $OnlyGenerateMetadata)
+        {
+            Merge-TraitImages $sequences_to_paths $nft_output
+        }
         $metadata = Get-ERC721Metadata -Id $_ -Sequence $seq[$_] -Config $config;
         
         if($plugin_module_present)

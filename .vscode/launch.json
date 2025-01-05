@@ -21,12 +21,12 @@
             "args": ["-Multithreaded", "-ConfigFile", "./config/sl_sample_final.config.json", "-SequenceFile", "./config/sl_sample_final.seq.json", "-OutputDirectory", "./output/sl_sample_final", "-PluginModuleFilePath", "./config/sl_sample_final.plugin.psm1"]
         },
         {
-            "name": "PowerShell: Sequence Generator File (Sample 13)",
+            "name": "PowerShell: Merger Generator File (Final) MT OFF",
             "type": "PowerShell",
             "request": "launch",
-            "preLaunchTask": "delete seq file (sample 13)",
-            "script": "./Get-NFTSequence.ps1",
-            "args": ["-ConfigFile", "./config/sl_sample_13_teeths.config.json", "-OutputSequenceFile", "./config/sl_sample_13_teeths.seq.json", "-Count", "5000", "-BlacklistFile", "./config/sl_sample_13_teeths.blacklist.json", "-PluginModuleFilePath", "./config/sl_sample_13_teeths.plugin.psm1"]
+            "preLaunchTask": "delete nft file (Final)",
+            "script": "./Get-NFTMerger.ps1",
+            "args": ["-ConfigFile", "./config/sl_sample_final.config.json", "-SequenceFile", "./config/sl_sample_final.seq.json", "-OutputDirectory", "./output/sl_sample_final", "-PluginModuleFilePath", "./config/sl_sample_final.plugin.psm1"]
         }
     ]
 }
